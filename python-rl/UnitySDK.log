@@ -1,0 +1,12 @@
+06/02/2019 10:31:34
+ 
+Log
+The Agent component attached to the GameObject Skeleton Archer(Clone) was initialized without a brain.
+UnityEngine.Debug:Log(Object)
+MLAgents.Agent:OnEnableHelper(Academy) (at /Users/Ale/Documents/unity-workspace/myRogueLike/Assets/ML-Agents/Scripts/Agent.cs:308)
+MLAgents.Agent:OnEnable() (at /Users/Ale/Documents/unity-workspace/myRogueLike/Assets/ML-Agents/Scripts/Agent.cs:280)
+UnityEngine.Object:Instantiate(GameObject)
+BoardManagerSystem:createCharacter(GameObject, Int32, Int32, Int32, DIRECTION) (at /Users/Ale/Documents/unity-workspace/myRogueLike/Assets/Scripts/BoardManagerSystem.cs:380)
+BoardManagerSystem:generateCharacters() (at /Users/Ale/Documents/unity-workspace/myRogueLike/Assets/Scripts/BoardManagerSystem.cs:315)
+BoardManagerSystem:Start() (at /Users/Ale/Documents/unity-workspace/myRogueLike/Assets/Scripts/BoardManagerSystem.cs:201)
+
