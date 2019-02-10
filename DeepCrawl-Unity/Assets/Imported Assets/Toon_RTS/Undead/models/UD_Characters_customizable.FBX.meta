@@ -1,0 +1,782 @@
+fileFormatVersion: 2
+guid: 1851e3e6c3e77d648a0cc1ef90d895fa
+timeCreated: 1495152586
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Footsteps
+    100004: Bip001 Head
+    100006: Bip001 HeadNub
+    100008: Bip001 L Calf
+    100010: Bip001 L Clavicle
+    100012: Bip001 L Foot
+    100014: Bip001 L Forearm
+    100016: Bip001 L Hand
+    100018: Bip001 L Thigh
+    100020: Bip001 L Toe0
+    100022: Bip001 L Toe0Nub
+    100024: Bip001 L UpperArm
+    100026: Bip001 Neck
+    100028: Bip001 Pelvis
+    100030: Bip001 R Calf
+    100032: Bip001 R Clavicle
+    100034: Bip001 R Foot
+    100036: Bip001 R Forearm
+    100038: Bip001 R Hand
+    100040: Bip001 R Thigh
+    100042: Bip001 R Toe0
+    100044: Bip001 R Toe0Nub
+    100046: Bip001 R UpperArm
+    100048: Bip001 Spine
+    100050: Box001
+    100052: ghoul
+    100054: necro_body
+    100056: Object011
+    100058: Object012
+    100060: Object013
+    100062: Object014
+    100064: Object015
+    100066: Object016
+    100068: Object017
+    100070: Object018
+    100072: Object020
+    100074: Object022
+    100076: Object024
+    100078: shield
+    100080: UD_body_A
+    100082: UD_body_B
+    100084: //RootNode
+    100086: quiver
+    100088: shield_A
+    100090: shield_B
+    100092: shield_C
+    100094: UD_body_ghoul
+    100096: UD_body_heavy
+    100098: UD_body_light
+    100100: UD_body_necro
+    100102: UD_body_spearman
+    100104: weapon_axe_A
+    100106: weapon_axe_B
+    100108: weapon_bow
+    100110: weapon_hammer
+    100112: weapon_spear
+    100114: weapon_staff
+    100116: weapon_sword_A
+    100118: weapon_sword_B
+    100120: Quiver
+    100122: UD_arms_A
+    100124: UD_arms_B
+    100126: UD_arms_C
+    100128: UD_arms_D
+    100130: UD_arms_E
+    100132: UD_body_C
+    100134: UD_body_D
+    100136: UD_body_E
+    100138: UD_body_F
+    100140: UD_head_A
+    100142: UD_head_B
+    100144: UD_head_C
+    100146: UD_head_D
+    100148: UD_head_E
+    100150: UD_head_F
+    100152: UD_legs_A
+    100154: UD_legs_B
+    100156: UD_legs_C
+    100158: UD_legs_D
+    100160: UD_shoulderpads_A
+    100162: UD_shoulderpads_B
+    100164: x_Full_light
+    100166: Bone_bag
+    100168: Bone_wood
+    100170: goods
+    100172: worker_wood
+    100174: worker_bag
+    100176: weapon_staff_A
+    100178: weapon_staff_B
+    100180: weapon_staff_C
+    400000: Bip001
+    400002: Bip001 Footsteps
+    400004: Bip001 Head
+    400006: Bip001 HeadNub
+    400008: Bip001 L Calf
+    400010: Bip001 L Clavicle
+    400012: Bip001 L Foot
+    400014: Bip001 L Forearm
+    400016: Bip001 L Hand
+    400018: Bip001 L Thigh
+    400020: Bip001 L Toe0
+    400022: Bip001 L Toe0Nub
+    400024: Bip001 L UpperArm
+    400026: Bip001 Neck
+    400028: Bip001 Pelvis
+    400030: Bip001 R Calf
+    400032: Bip001 R Clavicle
+    400034: Bip001 R Foot
+    400036: Bip001 R Forearm
+    400038: Bip001 R Hand
+    400040: Bip001 R Thigh
+    400042: Bip001 R Toe0
+    400044: Bip001 R Toe0Nub
+    400046: Bip001 R UpperArm
+    400048: Bip001 Spine
+    400050: Box001
+    400052: ghoul
+    400054: necro_body
+    400056: Object011
+    400058: Object012
+    400060: Object013
+    400062: Object014
+    400064: Object015
+    400066: Object016
+    400068: Object017
+    400070: Object018
+    400072: Object020
+    400074: Object022
+    400076: Object024
+    400078: shield
+    400080: UD_body_A
+    400082: UD_body_B
+    400084: //RootNode
+    400086: quiver
+    400088: shield_A
+    400090: shield_B
+    400092: shield_C
+    400094: UD_body_ghoul
+    400096: UD_body_heavy
+    400098: UD_body_light
+    400100: UD_body_necro
+    400102: UD_body_spearman
+    400104: weapon_axe_A
+    400106: weapon_axe_B
+    400108: weapon_bow
+    400110: weapon_hammer
+    400112: weapon_spear
+    400114: weapon_staff
+    400116: weapon_sword_A
+    400118: weapon_sword_B
+    400120: Quiver
+    400122: UD_arms_A
+    400124: UD_arms_B
+    400126: UD_arms_C
+    400128: UD_arms_D
+    400130: UD_arms_E
+    400132: UD_body_C
+    400134: UD_body_D
+    400136: UD_body_E
+    400138: UD_body_F
+    400140: UD_head_A
+    400142: UD_head_B
+    400144: UD_head_C
+    400146: UD_head_D
+    400148: UD_head_E
+    400150: UD_head_F
+    400152: UD_legs_A
+    400154: UD_legs_B
+    400156: UD_legs_C
+    400158: UD_legs_D
+    400160: UD_shoulderpads_A
+    400162: UD_shoulderpads_B
+    400164: x_Full_light
+    400166: Bone_bag
+    400168: Bone_wood
+    400170: goods
+    400172: worker_wood
+    400174: worker_bag
+    400176: weapon_staff_A
+    400178: weapon_staff_B
+    400180: weapon_staff_C
+    2300000: Object011
+    2300002: Object012
+    2300004: Object013
+    2300006: Object014
+    2300008: Object015
+    2300010: Object016
+    2300012: Object017
+    2300014: Object018
+    2300016: Object020
+    2300018: Object022
+    2300020: Object024
+    2300022: shield
+    2300024: quiver
+    2300026: shield_A
+    2300028: shield_B
+    2300030: shield_C
+    2300032: weapon_axe_A
+    2300034: weapon_axe_B
+    2300036: weapon_bow
+    2300038: weapon_hammer
+    2300040: weapon_spear
+    2300042: weapon_staff
+    2300044: weapon_sword_A
+    2300046: weapon_sword_B
+    2300048: weapon_staff_A
+    2300050: weapon_staff_B
+    2300052: weapon_staff_C
+    3300000: Object011
+    3300002: Object012
+    3300004: Object013
+    3300006: Object014
+    3300008: Object015
+    3300010: Object016
+    3300012: Object017
+    3300014: Object018
+    3300016: Object020
+    3300018: Object022
+    3300020: Object024
+    3300022: shield
+    3300024: quiver
+    3300026: shield_A
+    3300028: shield_B
+    3300030: shield_C
+    3300032: weapon_axe_A
+    3300034: weapon_axe_B
+    3300036: weapon_bow
+    3300038: weapon_hammer
+    3300040: weapon_spear
+    3300042: weapon_staff
+    3300044: weapon_sword_A
+    3300046: weapon_sword_B
+    3300048: weapon_staff_A
+    3300050: weapon_staff_B
+    3300052: weapon_staff_C
+    4300000: Object014
+    4300002: shield
+    4300004: Object018
+    4300006: Object020
+    4300008: Object017
+    4300010: Object013
+    4300012: Object024
+    4300014: Object015
+    4300016: Object012
+    4300018: Object022
+    4300020: Object011
+    4300022: Object016
+    4300024: necro_body
+    4300026: UD_body_A
+    4300028: UD_body_B
+    4300030: Box001
+    4300032: ghoul
+    4300034: shield_A
+    4300036: shield_B
+    4300038: shield_C
+    4300040: weapon_bow
+    4300042: weapon_staff
+    4300044: weapon_axe_A
+    4300046: weapon_hammer
+    4300048: weapon_axe_B
+    4300050: weapon_sword_A
+    4300052: weapon_spear
+    4300054: weapon_sword_B
+    4300056: quiver
+    4300058: UD_body_necro
+    4300060: UD_body_light
+    4300062: UD_body_spearman
+    4300064: UD_body_heavy
+    4300066: UD_body_ghoul
+    4300068: UD_body_F
+    4300070: x_Full_light
+    4300072: UD_body_C
+    4300074: UD_body_E
+    4300076: UD_body_D
+    4300078: UD_shoulderpads_A
+    4300080: UD_head_A
+    4300082: UD_head_B
+    4300084: UD_head_E
+    4300086: UD_arms_D
+    4300088: UD_legs_D
+    4300090: UD_shoulderpads_B
+    4300092: UD_head_C
+    4300094: UD_arms_B
+    4300096: UD_legs_B
+    4300098: UD_head_F
+    4300100: UD_arms_E
+    4300102: UD_head_D
+    4300104: UD_arms_C
+    4300106: UD_legs_C
+    4300108: UD_arms_A
+    4300110: UD_legs_A
+    4300112: Quiver
+    4300114: worker_wood
+    4300116: goods
+    4300118: worker_bag
+    4300120: weapon_staff_C
+    4300122: weapon_staff_A
+    4300124: weapon_staff_B
+    9500000: //RootNode
+    13700000: Box001
+    13700002: ghoul
+    13700004: necro_body
+    13700006: UD_body_A
+    13700008: UD_body_B
+    13700010: UD_body_ghoul
+    13700012: UD_body_heavy
+    13700014: UD_body_light
+    13700016: UD_body_necro
+    13700018: UD_body_spearman
+    13700020: Quiver
+    13700022: UD_arms_A
+    13700024: UD_arms_B
+    13700026: UD_arms_C
+    13700028: UD_arms_D
+    13700030: UD_arms_E
+    13700032: UD_body_C
+    13700034: UD_body_D
+    13700036: UD_body_E
+    13700038: UD_body_F
+    13700040: UD_head_A
+    13700042: UD_head_B
+    13700044: UD_head_C
+    13700046: UD_head_D
+    13700048: UD_head_E
+    13700050: UD_head_F
+    13700052: UD_legs_A
+    13700054: UD_legs_B
+    13700056: UD_legs_C
+    13700058: UD_legs_D
+    13700060: UD_shoulderpads_A
+    13700062: UD_shoulderpads_B
+    13700064: x_Full_light
+    13700066: goods
+    13700068: worker_wood
+    13700070: worker_bag
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Bip001 Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Bip001 R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: UD_Characters_customizable(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001
+      position: {x: 0, y: 0.73484915, z: -0.049094923}
+      rotation: {x: -0.50000036, y: 0.49999964, z: 0.49999964, w: 0.50000036}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Bip001 Footsteps
+      position: {x: -0, y: 0, z: -0.72924715}
+      rotation: {x: 0, y: 0, z: -0.7071063, w: 0.70710725}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 Pelvis
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.5, y: 0.5, z: 0.4999993, w: 0.5000007}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 L Thigh
+      position: {x: 0.00000014533997, y: 0.00000018773079, z: 0.111691944}
+      rotation: {x: -0.021586547, y: 0.998658, z: 0.020908121, w: 0.042179577}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 L Calf
+      position: {x: -0.38664594, y: 0.000000001513958, z: 0}
+      rotation: {x: 1.422446e-10, y: -0.000000011213707, z: 0.09567885, w: 0.9954123}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Bip001 L Foot
+      position: {x: -0.24324632, y: 0, z: 0.000000012111664}
+      rotation: {x: 0.024848638, y: 0.039986257, z: -0.074062906, w: 0.99614173}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Bip001 L Toe0
+      position: {x: -0.10453752, y: 0.2332749, z: 0.000000012111664}
+      rotation: {x: 0.000000015454312, y: -0.000000015454312, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 L Toe0Nub
+      position: {x: -0.010443561, y: 0, z: 0}
+      rotation: {x: 9.553441e-16, y: 1.75553e-30, z: 1, w: -1.8375893e-15}
+      scale: {x: -0.99999994, y: -1, z: -0.99999994}
+      transformModified: 1
+    - name: Bip001 R Thigh
+      position: {x: -0.00000014533997, y: -0.00000012111664, z: -0.111691944}
+      rotation: {x: -0.021586519, y: 0.9986579, z: -0.020909475, w: -0.042181075}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 R Calf
+      position: {x: -0.3866459, y: -0.000000001513958, z: 0}
+      rotation: {x: -6.0576955e-10, y: 0.0000000111691545, z: 0.09567885, w: 0.9954123}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 R Foot
+      position: {x: -0.24324629, y: 0, z: 0.000000012111664}
+      rotation: {x: -0.02484864, y: -0.03998634, z: -0.0740629, w: 0.99614173}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 R Toe0
+      position: {x: -0.10453752, y: 0.2332749, z: 0.000000012111664}
+      rotation: {x: -0.00000001545431, y: 0.00000001545431, z: -0.7071068, w: 0.7071068}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 R Toe0Nub
+      position: {x: -0.010443561, y: 0, z: 0}
+      rotation: {x: 1.6970273e-30, y: -9.553415e-16, z: 1.776357e-15, w: 1}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 Spine
+      position: {x: -0.11267442, y: -0.0002882485, z: 0.00000015665667}
+      rotation: {x: -0.000002080476, y: 0.000000693676, z: -0.000398159, w: 0.99999994}
+      scale: {x: 1, y: 0.99999994, z: 0.99999994}
+      transformModified: 1
+    - name: Bip001 L Clavicle
+      position: {x: -0.32833782, y: 0.000026666856, z: 0.06485968}
+      rotation: {x: -0.61052406, y: -0.029295458, z: 0.79114693, w: 0.022105206}
+      scale: {x: 1, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Bip001 L UpperArm
+      position: {x: -0.1631933, y: 0.000000003027916, z: -0.00000009689331}
+      rotation: {x: 0.054998465, y: 0.10296414, z: 0.028512493, w: 0.99275404}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Bip001 L Forearm
+      position: {x: -0.2977878, y: -0.000000012111664, z: 0}
+      rotation: {x: -0.0016805474, y: 0.016749732, z: 0.037211422, w: 0.9991656}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 L Hand
+      position: {x: -0.22806446, y: 0, z: 0}
+      rotation: {x: -0.70640385, y: 0.024401998, z: -0.024421416, w: 0.7069666}
+      scale: {x: 0.99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: Object014
+      position: {x: -0.18071823, y: -0.005953319, z: 0.047163725}
+      rotation: {x: 0.64703274, y: 0.2690611, z: 0.2052759, w: 0.68323976}
+      scale: {x: 1.1451252, y: 1.1451252, z: 1.145125}
+      transformModified: 1
+    - name: Object017
+      position: {x: -0.10126019, y: 0.03753637, z: -0.08022069}
+      rotation: {x: 0.94070715, y: 0.332618, z: -0.06242904, w: -0.02319309}
+      scale: {x: 1.1838251, y: 1.183825, z: 1.1838251}
+      transformModified: 1
+    - name: Object018
+      position: {x: -0.1463726, y: 0.009660263, z: -0.01712032}
+      rotation: {x: 0.3979644, y: 0.9060497, z: -0.08794174, w: 0.11386184}
+      scale: {x: 1.0483752, y: 1.0483752, z: 1.0483752}
+      transformModified: 1
+    - name: Object020
+      position: {x: 0.031005666, y: 0.04264604, z: -0.017211413}
+      rotation: {x: 0.64703274, y: 0.26906112, z: 0.20527594, w: 0.68323976}
+      scale: {x: 1.0000001, y: 1.0000001, z: 0.99999994}
+      transformModified: 1
+    - name: shield
+      position: {x: -0.1463727, y: 0.009660069, z: -0.017120272}
+      rotation: {x: 0.39796436, y: 0.9060497, z: -0.08794176, w: 0.11386193}
+      scale: {x: 1.0580499, y: 1.05805, z: 1.0580503}
+      transformModified: 1
+    - name: Bip001 Neck
+      position: {x: -0.3911548, y: -0.00621553, z: -0.000000008822272}
+      rotation: {x: 0, y: 0.00000023841858, z: -0.14236382, w: 0.9898144}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 Head
+      position: {x: -0.07070935, y: 0.0149220545, z: 0.000000022814248}
+      rotation: {x: -2.5800954e-13, y: -0.00000043339293, z: 0.15625714, w: 0.98771644}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 HeadNub
+      position: {x: -0.24751396, y: -0.000000012111664, z: 0}
+      rotation: {x: -7.993605e-15, y: -7.1054265e-15, z: -5.6797973e-29, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: Bip001 R Clavicle
+      position: {x: -0.32833782, y: 0.000027027178, z: -0.064859666}
+      rotation: {x: 0.6105242, y: 0.02929325, z: 0.79114705, w: 0.022103515}
+      scale: {x: 1.0000001, y: 1, z: 1}
+      transformModified: 1
+    - name: Bip001 R UpperArm
+      position: {x: -0.1631933, y: 0.000000003027916, z: 0.00000009689331}
+      rotation: {x: -0.054998532, y: -0.10296253, z: 0.028512634, w: 0.9927542}
+      scale: {x: 0.99999994, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: Bip001 R Forearm
+      position: {x: -0.29778785, y: 0, z: 0}
+      rotation: {x: 0.0016806421, y: -0.016749773, z: 0.03721138, w: 0.9991656}
+      scale: {x: 1.0000001, y: 0.99999994, z: 1}
+      transformModified: 1
+    - name: Bip001 R Hand
+      position: {x: -0.22806452, y: 0, z: 0}
+      rotation: {x: 0.70640385, y: -0.02440202, z: -0.024421396, w: 0.7069666}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+      transformModified: 1
+    - name: Object011
+      position: {x: -0.09233564, y: 0.044140715, z: 0.09976857}
+      rotation: {x: 0.0052523264, y: -0.019094137, z: -0.043725025, w: 0.9988473}
+      scale: {x: 1.0534005, y: 1.0534004, z: 1.0534006}
+      transformModified: 1
+    - name: Object012
+      position: {x: -0.072080486, y: 0.037684135, z: 0.03847424}
+      rotation: {x: 0.0052523324, y: -0.019094137, z: -0.043724984, w: 0.99884737}
+      scale: {x: 1.0408634, y: 1.0408636, z: 1.0408633}
+      transformModified: 1
+    - name: Object013
+      position: {x: -0.10779424, y: 0.035930753, z: 0.090344675}
+      rotation: {x: 0.00525237, y: -0.01909415, z: -0.043725125, w: 0.9988473}
+      scale: {x: 1.3352183, y: 1.3352178, z: 1.3352183}
+      transformModified: 1
+    - name: Object015
+      position: {x: -0.0689627, y: 0.039873924, z: -0.041503727}
+      rotation: {x: 0.0052523273, y: -0.019094136, z: -0.043725017, w: 0.9988473}
+      scale: {x: 1.2515502, y: 0.8044785, z: 1.2515502}
+      transformModified: 1
+    - name: Object022
+      position: {x: -0.07622916, y: 0.058589835, z: 0.048006408}
+      rotation: {x: -0.20527484, y: 0.6832401, z: -0.6470324, w: 0.2690619}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+      transformModified: 1
+    - name: Object024
+      position: {x: -0.0886817, y: 0.032568846, z: 0.17146952}
+      rotation: {x: 0.01763539, y: -0.025553428, z: -0.13453329, w: 0.99042255}
+      scale: {x: 1.4450505, y: 1.4450501, z: 1.4450502}
+      transformModified: 1
+    - name: Object016
+      position: {x: -0.2858557, y: -0.2523222, z: -0.08375914}
+      rotation: {x: 0.7529551, y: -0.040675934, z: -0.6560195, w: 0.03229062}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+      transformModified: 1
+    - name: Box001
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ghoul
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: necro_body
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: UD_body_A
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: UD_body_B
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

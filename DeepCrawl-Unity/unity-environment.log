@@ -1,0 +1,87 @@
+11/09/2018 09:44:01
+ 
+Log
+System.Boolean[,]
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:spawnTemplateWalls() (at Assets/Scripts/BoardManagerSystem.cs:225)
+BoardManagerSystem:generateBoard() (at Assets/Scripts/BoardManagerSystem.cs:127)
+BoardManagerSystem:Start() (at Assets/Scripts/BoardManagerSystem.cs:71)
+
+Log
+The Agent component attached to the GameObject Player(Clone) was initialized without a brain.
+UnityEngine.Debug:Log(Object)
+MLAgents.Agent:OnEnableHelper(Academy) (at Assets/ML-Agents/Scripts/Agent.cs:294)
+MLAgents.Agent:OnEnable() (at Assets/ML-Agents/Scripts/Agent.cs:266)
+UnityEngine.Object:Instantiate(GameObject)
+BoardManagerSystem:createCharacter(Int32, Int32, Int32) (at Assets/Scripts/BoardManagerSystem.cs:403)
+BoardManagerSystem:generateCharacters() (at Assets/Scripts/BoardManagerSystem.cs:382)
+BoardManagerSystem:Start() (at Assets/Scripts/BoardManagerSystem.cs:73)
+
+Log
+The Agent component attached to the GameObject Player(Clone) was initialized without a brain.
+UnityEngine.Debug:Log(Object)
+MLAgents.Agent:OnEnableHelper(Academy) (at Assets/ML-Agents/Scripts/Agent.cs:294)
+MLAgents.Agent:OnEnable() (at Assets/ML-Agents/Scripts/Agent.cs:266)
+UnityEngine.Object:Instantiate(GameObject)
+BoardManagerSystem:createCharacter(Int32, Int32, Int32) (at Assets/Scripts/BoardManagerSystem.cs:403)
+BoardManagerSystem:generateCharacters() (at Assets/Scripts/BoardManagerSystem.cs:382)
+BoardManagerSystem:Start() (at Assets/Scripts/BoardManagerSystem.cs:73)
+
+Log
+System.Boolean[,]
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:spawnTemplateWalls() (at Assets/Scripts/BoardManagerSystem.cs:225)
+BoardManagerSystem:generateBoard() (at Assets/Scripts/BoardManagerSystem.cs:127)
+BoardManagerSystem:resetGame() (at Assets/Scripts/BoardManagerSystem.cs:459)
+BaseAgent:AgentReset() (at Assets/Scripts/ML/Agents/BaseAgent.cs:22)
+MLAgents.Agent:_AgentReset() (at Assets/ML-Agents/Scripts/Agent.cs:760)
+MLAgents.Academy:ForcedFullReset() (at Assets/ML-Agents/Scripts/Academy.cs:506)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:556)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:604)
+
+Log
+System.Boolean[,]
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:spawnTemplateWalls() (at Assets/Scripts/BoardManagerSystem.cs:225)
+BoardManagerSystem:generateBoard() (at Assets/Scripts/BoardManagerSystem.cs:127)
+BoardManagerSystem:resetGame() (at Assets/Scripts/BoardManagerSystem.cs:459)
+BaseAgent:AgentReset() (at Assets/Scripts/ML/Agents/BaseAgent.cs:22)
+MLAgents.Agent:_AgentReset() (at Assets/ML-Agents/Scripts/Agent.cs:760)
+MLAgents.Academy:ForcedFullReset() (at Assets/ML-Agents/Scripts/Academy.cs:506)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:556)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:604)
+
+Log
+System.Boolean[,]
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:spawnTemplateWalls() (at Assets/Scripts/BoardManagerSystem.cs:225)
+BoardManagerSystem:generateBoard() (at Assets/Scripts/BoardManagerSystem.cs:127)
+BoardManagerSystem:resetGame() (at Assets/Scripts/BoardManagerSystem.cs:459)
+BaseAgent:AgentReset() (at Assets/Scripts/ML/Agents/BaseAgent.cs:22)
+MLAgents.Agent:_AgentReset() (at Assets/ML-Agents/Scripts/Agent.cs:760)
+MLAgents.Academy:ForcedFullReset() (at Assets/ML-Agents/Scripts/Academy.cs:506)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:541)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:604)
+
+Log
+System.Boolean[,]
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:spawnTemplateWalls() (at Assets/Scripts/BoardManagerSystem.cs:225)
+BoardManagerSystem:generateBoard() (at Assets/Scripts/BoardManagerSystem.cs:127)
+BoardManagerSystem:resetGame() (at Assets/Scripts/BoardManagerSystem.cs:459)
+BaseAgent:AgentReset() (at Assets/Scripts/ML/Agents/BaseAgent.cs:22)
+MLAgents.Agent:_AgentReset() (at Assets/ML-Agents/Scripts/Agent.cs:760)
+MLAgents.Academy:ForcedFullReset() (at Assets/ML-Agents/Scripts/Academy.cs:506)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:541)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:604)
+
+Exception
+NullReferenceException: Object reference not set to an instance of an object
+Unity.Entities.ComponentChunkIterator.UpdateCacheResolvedIndex (System.Int32 index, Unity.Entities.ComponentChunkCache& cache, System.Boolean isWriting) (at /Users/Ale/Library/Unity/cache/packages/packages.unity.com/com.unity.entities@0.0.12-preview.11/Unity.Entities/Iterators/ComponentChunkIterator.cs:256)
+Unity.Entities.ComponentChunkIterator.UpdateCache (System.Int32 index, Unity.Entities.ComponentChunkCache& cache, System.Boolean isWriting) (at /Users/Ale/Library/Unity/cache/packages/packages.unity.com/com.unity.entities@0.0.12-preview.11/Unity.Entities/Iterators/ComponentChunkIterator.cs:336)
+Unity.Entities.ComponentArray`1[T].get_Item (System.Int32 index) (at /Users/Ale/Library/Unity/cache/packages/packages.unity.com/com.unity.entities@0.0.12-preview.11/Unity.Entities.Hybrid/Iterators/ComponentArray.cs:51)
+PickUpSystem.OnUpdate () (at Assets/Scripts/Systems/PickUpSystem.cs:29)
+Unity.Entities.ComponentSystem.InternalUpdate () (at /Users/Ale/Library/Unity/cache/packages/packages.unity.com/com.unity.entities@0.0.12-preview.11/Unity.Entities/ComponentSystem.cs:328)
+Unity.Entities.ScriptBehaviourManager.Update () (at /Users/Ale/Library/Unity/cache/packages/packages.unity.com/com.unity.entities@0.0.12-preview.11/Unity.Entities/ScriptBehaviourManager.cs:82)
+Unity.Entities.ScriptBehaviourUpdateOrder+DummyDelagateWrapper.TriggerUpdate () (at /Users/Ale/Library/Unity/cache/packages/packages.unity.com/com.unity.entities@0.0.12-preview.11/Unity.Entities/ScriptBehaviourUpdateOrder.cs:703)
+

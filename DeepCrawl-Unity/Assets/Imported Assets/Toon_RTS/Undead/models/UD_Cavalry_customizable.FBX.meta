@@ -1,0 +1,370 @@
+fileFormatVersion: 2
+guid: e1f9acf5556e1db4ca77f165dcedb5fc
+timeCreated: 1495620113
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Footsteps
+    100004: Bip001 Footsteps001
+    100006: Bip001 Head
+    100008: Bip001 Head001
+    100010: Bip001 HeadNub
+    100012: Bip001 HeadNub001
+    100014: Bip001 L Calf
+    100016: Bip001 L Calf001
+    100018: Bip001 L Clavicle
+    100020: Bip001 L Clavicle001
+    100022: Bip001 L Finger0
+    100024: Bip001 L Finger0Nub
+    100026: Bip001 L Foot
+    100028: Bip001 L Foot001
+    100030: Bip001 L Forearm
+    100032: Bip001 L Forearm001
+    100034: Bip001 L Hand
+    100036: Bip001 L Hand001
+    100038: Bip001 L Thigh
+    100040: Bip001 L Thigh001
+    100042: Bip001 L Toe0
+    100044: Bip001 L Toe001
+    100046: Bip001 L Toe0Nub
+    100048: Bip001 L Toe0Nub001
+    100050: Bip001 L UpperArm
+    100052: Bip001 L UpperArm001
+    100054: Bip001 Neck
+    100056: Bip001 Neck001
+    100058: Bip001 Pelvis
+    100060: Bip001 Pelvis001
+    100062: Bip001 R Calf
+    100064: Bip001 R Calf001
+    100066: Bip001 R Clavicle
+    100068: Bip001 R Clavicle001
+    100070: Bip001 R Finger0
+    100072: Bip001 R Finger0Nub
+    100074: Bip001 R Foot
+    100076: Bip001 R Foot001
+    100078: Bip001 R Forearm
+    100080: Bip001 R Forearm001
+    100082: Bip001 R Hand
+    100084: Bip001 R Hand001
+    100086: Bip001 R Thigh
+    100088: Bip001 R Thigh001
+    100090: Bip001 R Toe0
+    100092: Bip001 R Toe001
+    100094: Bip001 R Toe0Nub
+    100096: Bip001 R Toe0Nub001
+    100098: Bip001 R UpperArm
+    100100: Bip001 R UpperArm001
+    100102: Bip001 Spine
+    100104: Bip001 Spine001
+    100106: Bip001 Tail
+    100108: Bip001 Tail1
+    100110: Bip001 TailNub
+    100112: Bip002
+    100114: Bone_bag
+    100116: Bone_wood
+    100118: Quiver
+    100120: shield_A
+    100122: shield_B
+    100124: shield_C
+    100126: UD_arms_A
+    100128: UD_arms_B
+    100130: UD_arms_C
+    100132: UD_arms_D
+    100134: UD_arms_E
+    100136: UD_body_A
+    100138: UD_body_B
+    100140: UD_body_C
+    100142: UD_body_D
+    100144: UD_body_E
+    100146: UD_body_F
+    100148: //RootNode
+    100150: UD_head_A
+    100152: UD_head_B
+    100154: UD_head_C
+    100156: UD_head_D
+    100158: UD_head_E
+    100160: UD_head_F
+    100162: UD_Horse_A
+    100164: UD_legs_A
+    100166: UD_legs_B
+    100168: UD_legs_C
+    100170: UD_legs_D
+    100172: UD_shoulderpads_A
+    100174: UD_shoulderpads_B
+    100176: weapon_axe_A
+    100178: weapon_axe_B
+    100180: weapon_bow
+    100182: weapon_hammer
+    100184: weapon_spear
+    100186: weapon_staff
+    100188: weapon_sword_A
+    100190: weapon_sword_B
+    100192: worker_bag
+    100194: worker_wood
+    100196: weapon_staff_A
+    100198: weapon_staff_B
+    100200: weapon_staff_C
+    400000: Bip001
+    400002: Bip001 Footsteps
+    400004: Bip001 Footsteps001
+    400006: Bip001 Head
+    400008: Bip001 Head001
+    400010: Bip001 HeadNub
+    400012: Bip001 HeadNub001
+    400014: Bip001 L Calf
+    400016: Bip001 L Calf001
+    400018: Bip001 L Clavicle
+    400020: Bip001 L Clavicle001
+    400022: Bip001 L Finger0
+    400024: Bip001 L Finger0Nub
+    400026: Bip001 L Foot
+    400028: Bip001 L Foot001
+    400030: Bip001 L Forearm
+    400032: Bip001 L Forearm001
+    400034: Bip001 L Hand
+    400036: Bip001 L Hand001
+    400038: Bip001 L Thigh
+    400040: Bip001 L Thigh001
+    400042: Bip001 L Toe0
+    400044: Bip001 L Toe001
+    400046: Bip001 L Toe0Nub
+    400048: Bip001 L Toe0Nub001
+    400050: Bip001 L UpperArm
+    400052: Bip001 L UpperArm001
+    400054: Bip001 Neck
+    400056: Bip001 Neck001
+    400058: Bip001 Pelvis
+    400060: Bip001 Pelvis001
+    400062: Bip001 R Calf
+    400064: Bip001 R Calf001
+    400066: Bip001 R Clavicle
+    400068: Bip001 R Clavicle001
+    400070: Bip001 R Finger0
+    400072: Bip001 R Finger0Nub
+    400074: Bip001 R Foot
+    400076: Bip001 R Foot001
+    400078: Bip001 R Forearm
+    400080: Bip001 R Forearm001
+    400082: Bip001 R Hand
+    400084: Bip001 R Hand001
+    400086: Bip001 R Thigh
+    400088: Bip001 R Thigh001
+    400090: Bip001 R Toe0
+    400092: Bip001 R Toe001
+    400094: Bip001 R Toe0Nub
+    400096: Bip001 R Toe0Nub001
+    400098: Bip001 R UpperArm
+    400100: Bip001 R UpperArm001
+    400102: Bip001 Spine
+    400104: Bip001 Spine001
+    400106: Bip001 Tail
+    400108: Bip001 Tail1
+    400110: Bip001 TailNub
+    400112: Bip002
+    400114: Bone_bag
+    400116: Bone_wood
+    400118: Quiver
+    400120: shield_A
+    400122: shield_B
+    400124: shield_C
+    400126: UD_arms_A
+    400128: UD_arms_B
+    400130: UD_arms_C
+    400132: UD_arms_D
+    400134: UD_arms_E
+    400136: UD_body_A
+    400138: UD_body_B
+    400140: UD_body_C
+    400142: UD_body_D
+    400144: UD_body_E
+    400146: UD_body_F
+    400148: //RootNode
+    400150: UD_head_A
+    400152: UD_head_B
+    400154: UD_head_C
+    400156: UD_head_D
+    400158: UD_head_E
+    400160: UD_head_F
+    400162: UD_Horse_A
+    400164: UD_legs_A
+    400166: UD_legs_B
+    400168: UD_legs_C
+    400170: UD_legs_D
+    400172: UD_shoulderpads_A
+    400174: UD_shoulderpads_B
+    400176: weapon_axe_A
+    400178: weapon_axe_B
+    400180: weapon_bow
+    400182: weapon_hammer
+    400184: weapon_spear
+    400186: weapon_staff
+    400188: weapon_sword_A
+    400190: weapon_sword_B
+    400192: worker_bag
+    400194: worker_wood
+    400196: weapon_staff_A
+    400198: weapon_staff_B
+    400200: weapon_staff_C
+    2300000: shield_A
+    2300002: shield_B
+    2300004: shield_C
+    2300006: weapon_axe_A
+    2300008: weapon_axe_B
+    2300010: weapon_bow
+    2300012: weapon_hammer
+    2300014: weapon_spear
+    2300016: weapon_staff
+    2300018: weapon_sword_A
+    2300020: weapon_sword_B
+    2300022: weapon_staff_A
+    2300024: weapon_staff_B
+    2300026: weapon_staff_C
+    3300000: shield_A
+    3300002: shield_B
+    3300004: shield_C
+    3300006: weapon_axe_A
+    3300008: weapon_axe_B
+    3300010: weapon_bow
+    3300012: weapon_hammer
+    3300014: weapon_spear
+    3300016: weapon_staff
+    3300018: weapon_sword_A
+    3300020: weapon_sword_B
+    3300022: weapon_staff_A
+    3300024: weapon_staff_B
+    3300026: weapon_staff_C
+    4300000: UD_Horse_A
+    4300002: shield_A
+    4300004: shield_B
+    4300006: shield_C
+    4300008: weapon_bow
+    4300010: weapon_staff
+    4300012: weapon_axe_A
+    4300014: weapon_hammer
+    4300016: weapon_axe_B
+    4300018: weapon_sword_A
+    4300020: weapon_spear
+    4300022: weapon_sword_B
+    4300024: UD_body_F
+    4300026: UD_body_C
+    4300028: UD_body_E
+    4300030: UD_body_D
+    4300032: UD_shoulderpads_A
+    4300034: UD_head_A
+    4300036: UD_head_B
+    4300038: UD_body_A
+    4300040: UD_body_B
+    4300042: UD_head_E
+    4300044: UD_arms_D
+    4300046: UD_legs_D
+    4300048: UD_shoulderpads_B
+    4300050: UD_head_C
+    4300052: UD_arms_B
+    4300054: UD_legs_B
+    4300056: UD_head_F
+    4300058: UD_arms_E
+    4300060: UD_head_D
+    4300062: UD_arms_C
+    4300064: UD_legs_C
+    4300066: UD_arms_A
+    4300068: UD_legs_A
+    4300070: Quiver
+    4300072: worker_wood
+    4300074: worker_bag
+    4300076: weapon_staff_C
+    4300078: weapon_staff_A
+    4300080: weapon_staff_B
+    9500000: //RootNode
+    13700000: Quiver
+    13700002: UD_arms_A
+    13700004: UD_arms_B
+    13700006: UD_arms_C
+    13700008: UD_arms_D
+    13700010: UD_arms_E
+    13700012: UD_body_A
+    13700014: UD_body_B
+    13700016: UD_body_C
+    13700018: UD_body_D
+    13700020: UD_body_E
+    13700022: UD_body_F
+    13700024: UD_head_A
+    13700026: UD_head_B
+    13700028: UD_head_C
+    13700030: UD_head_D
+    13700032: UD_head_E
+    13700034: UD_head_F
+    13700036: UD_Horse_A
+    13700038: UD_legs_A
+    13700040: UD_legs_B
+    13700042: UD_legs_C
+    13700044: UD_legs_D
+    13700046: UD_shoulderpads_A
+    13700048: UD_shoulderpads_B
+    13700050: worker_bag
+    13700052: worker_wood
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

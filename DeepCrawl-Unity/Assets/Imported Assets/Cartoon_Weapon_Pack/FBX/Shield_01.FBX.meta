@@ -1,0 +1,198 @@
+fileFormatVersion: 2
+guid: 3199537ef5f8cc944b8cae16c1727be2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Arrow
+    100002: Bow
+    100004: Box001
+    100006: Dagger
+    100008: Espadon
+    100010: Object001
+    100012: Quiver
+    100014: //RootNode
+    100016: Shield_01
+    100018: Shield_02
+    100020: Shield_03
+    100022: Staff_01
+    100024: Staff_02
+    100026: Staff_03
+    100028: Staff_04
+    100030: Staff_05
+    100032: Staff_06
+    100034: Sword_01
+    100036: Sword_02
+    100038: Sword_03
+    100040: Sword_04
+    100042: Weapon_Rack
+    400000: Arrow
+    400002: Bow
+    400004: Box001
+    400006: Dagger
+    400008: Espadon
+    400010: Object001
+    400012: Quiver
+    400014: //RootNode
+    400016: Shield_01
+    400018: Shield_02
+    400020: Shield_03
+    400022: Staff_01
+    400024: Staff_02
+    400026: Staff_03
+    400028: Staff_04
+    400030: Staff_05
+    400032: Staff_06
+    400034: Sword_01
+    400036: Sword_02
+    400038: Sword_03
+    400040: Sword_04
+    400042: Weapon_Rack
+    2300000: Arrow
+    2300002: Bow
+    2300004: Box001
+    2300006: Dagger
+    2300008: Espadon
+    2300010: Object001
+    2300012: Quiver
+    2300014: Shield_01
+    2300016: Shield_02
+    2300018: Shield_03
+    2300020: Staff_01
+    2300022: Staff_02
+    2300024: Staff_03
+    2300026: Staff_04
+    2300028: Staff_05
+    2300030: Staff_06
+    2300032: Sword_01
+    2300034: Sword_02
+    2300036: Sword_03
+    2300038: Sword_04
+    2300040: Weapon_Rack
+    2300042: //RootNode
+    3300000: Arrow
+    3300002: Bow
+    3300004: Box001
+    3300006: Dagger
+    3300008: Espadon
+    3300010: Object001
+    3300012: Quiver
+    3300014: Shield_01
+    3300016: Shield_02
+    3300018: Shield_03
+    3300020: Staff_01
+    3300022: Staff_02
+    3300024: Staff_03
+    3300026: Staff_04
+    3300028: Staff_05
+    3300030: Staff_06
+    3300032: Sword_01
+    3300034: Sword_02
+    3300036: Sword_03
+    3300038: Sword_04
+    3300040: Weapon_Rack
+    3300042: //RootNode
+    4300000: Sword_04
+    4300002: Sword_01
+    4300004: Shield_01
+    4300006: Shield_02
+    4300008: Staff_01
+    4300010: Staff_06
+    4300012: Bow
+    4300014: Arrow
+    4300016: Espadon
+    4300018: Dagger
+    4300020: Box001
+    4300022: Object001
+    4300024: Weapon_Rack
+    4300026: Quiver
+    4300028: Staff_02
+    4300030: Staff_03
+    4300032: Staff_05
+    4300034: Staff_04
+    4300036: Shield_03
+    4300038: Sword_02
+    4300040: Sword_03
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
