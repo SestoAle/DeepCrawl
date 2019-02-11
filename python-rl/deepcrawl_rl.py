@@ -12,7 +12,7 @@ import json
 from mlagents.envs import UnityEnvironment
 from unity_env_wrapper import UnityEnvWrapper
 from export_graph import export_pb
-from deepcrawl_runenr import DeepCrawlRunner
+from deepcrawl_runner import DeepCrawlRunner
 
 import tensorflow as tf
 import argparse

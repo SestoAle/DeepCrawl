@@ -1,2 +1,104 @@
 # DeepCrawl
-Deep reinforcement learning for the development of RogueLike games
+####Introduction
+DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
+are trained with Deep Reinforcement Learning algorithms.
+
+The game is design to be hard, yet fair: the player will have to explore the 
+dungeons and defeat all the guardians of the rooms, paying attention to every 
+moves the AI does!
+
+The game was developed in Unity, while the AI was built through Tensorforce and
+Unity ml-agents.  
+
+The project was part of a Master thesis in Computer Engineering at 
+Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
+Learning for turn-based strategy games".
+
+####Table of content
+* [Installation](#installation)
+* [Usage and examples](#usage-and-examples)
+* Proposed model (CAMBIARE link)
+* Documents (CAMBIARE link)
+* License (CAMBIARE link)
+
+##Installation
+You can try the Android version of the game downloading the apk at link CAMBIARE (link apk).
+
+If you want to check the game code and test the DRL algorithms, first download 
+the repository:
+```bash
+git clone https://github.com/SestoAle/DeepCrawl.git
+``` 
+then follow these instructions.
+#### Unity
+1. Open the folder ```DeepCrawl-Unity``` with Unity Editor;
+2. Download ```TensorFlowSharp``` CAMBIARE (link tensorflowsharp) plugin and 
+import it in the project. More information at CAMBIAre (link unity ml-agents);
+3. Close and re-open the editor;
+
+#### Prerequsites
+CAMBIARE (tabellina requisiti)
+
+## Usage and examples
+There are more methods to train one agent with the model described in features CAMBIARE (hyperlink a feature):
+* for Linux system, the repository provides a built environment which can be
+used to start the training without Unity Editor:
+```bash
+python3 deepcrawl_rl.py --game-name="envs/DeepCrawl-training-env"
+```  
+
+* you can start the training directly from Unity Editor. First you have to 
+change the flag ```isTraining``` in ```BoardManagerSystem``` game object, then 
+change the ```TrainBrain``` game object to ```External``` (for more information,
+see CAMBIARE (link unity ml-agents)). After that, run the command and follow the 
+instruction on screen:
+```bash
+python3 deepcrawl_rl.py 
+```  
+
+You can specify the agent statistics modifying the curriculum json in the 
+```deepcrawl_rl.py``` file. For more information see features CAMBIARE (link feature):
+
+
+When the training is done, a ```agent.bytes``` file will be automatically stored 
+in ```saved``` folder; you can import the file in Unity Editor and assign it 
+to any internal brain.
+
+## Features
+In this section will be described the main components of the DRL model.
+#### Neural net
+CAMBIARE (immagine rete neurale)
+#### Reward function
+CAMBIARE (immagine reward function)
+#### Training Set-up
+The agent will be trained in a random room with curriculum learning: the values
+can be defined in the json in the ```deepcrawl_rl.py``` file. 
+In here, you can also specify the agent parameters (such as ATK, DEF and DEX), 
+what values to change and the number of steps to change phase.
+```python
+curriculum = {
+    'current_step': 0,
+    'thresholds': [2.5e6, 2e6, 1.5e6, 1e6],
+    'parameters':
+        {
+            'minTargetHp': [1,10,10,10,10],
+            'maxTargetHp': [1,10,20,20,20],
+            'minAgentHp': [5,5,5,5,5],
+            'maxAgentHp': [20,20,20,20,20],
+            'minNumLoot': [0.2,0.2,0.2,0.08,0.04],
+            'maxNumLoot': [0.2,0.2,0.2,0.2,0.2],
+            'numActions': [17,17,17,17,17],
+            # Agent parameters
+            'agentDes': [3,3,3,3,3],
+            'agentAtk': [3,3,3,3,3],
+            'agentDef': [3,3,3,3,3]
+        }
+}
+```
+## Documents
+A copy of the thesis document (italian) can be found at CAMBIARE (link tesi).
+
+A copy of the thesis presenation (italian) can be found at CAMBAIRE (link presentazione).
+ 
+## License
+CAMBIARE (mit license)
