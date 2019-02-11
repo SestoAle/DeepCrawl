@@ -34,3 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+
+# file: ~/.gitignore_global
+.DS_Store
+.idea

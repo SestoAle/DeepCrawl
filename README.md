@@ -10,6 +10,8 @@ moves the AI does!
 The game was developed in Unity, while the AI was built through Tensorforce and
 Unity ml-agents.  
 
+![Game gif](https://i.imgur.com/vYzUVRR.gifv)
+
 The project was part of a Master thesis in Computer Engineering at 
 Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
 Learning for turn-based strategy games".
@@ -32,8 +34,9 @@ git clone https://github.com/SestoAle/DeepCrawl.git
 then follow these instructions.
 #### Unity
 1. Open the folder ```DeepCrawl-Unity``` with Unity Editor;
-2. Download ```TensorFlowSharp``` CAMBIARE (link tensorflowsharp) plugin and 
-import it in the project. More information at CAMBIAre (link unity ml-agents);
+2. Download ```TensorFlowSharp``` 
+plugin [here](https://s3.amazonaws.com/unity-ml-agents/0.5/TFSharpPlugin.unitypackage) 
+and import it in the project. More information at CAMBIAre (link unity ml-agents);
 3. Close and re-open the editor;
 
 #### Prerequsites
@@ -67,9 +70,9 @@ to any internal brain.
 ## Proposed model
 In this section will be described the main components of the DRL model.
 #### Neural net
-![Neural Net](https://i.imgur.com/mlHRlot.png)
+![Neural net](https://i.imgur.com/FZzxbux.png)
 #### Reward function
-CAMBIARE (immagine reward function)
+![Reward function](https://i.imgur.com/S5LOfj0.png)
 #### Training Set-up
 The agent will be trained in a random room with curriculum learning: the values
 can be defined in the json in the ```deepcrawl_rl.py``` file. 
@@ -96,9 +99,11 @@ curriculum = {
 }
 ```
 ## Documents
-A copy of the thesis document (italian) can be found at CAMBIARE (link tesi).
+A copy of the thesis document (italian) can be found 
+[here](documents/thesis.pdf).
 
-A copy of the thesis presenation (italian) can be found at CAMBAIRE (link presentazione).
+A copy of the thesis presenation (italian) can be found 
+[here](documents/presentation.pdf)
  
 ## License
 CAMBIARE (mit license)
