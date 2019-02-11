@@ -1,5 +1,5 @@
 # DeepCrawl
-####Introduction
+#### Introduction
 DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
 are trained with Deep Reinforcement Learning algorithms.
 
@@ -14,14 +14,14 @@ The project was part of a Master thesis in Computer Engineering at
 Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
 Learning for turn-based strategy games".
 
-####Table of content
+#### Table of content
 * [Installation](#installation)
 * [Usage and examples](#usage-and-examples)
-* Proposed model (CAMBIARE link)
-* Documents (CAMBIARE link)
-* License (CAMBIARE link)
+* [Proposed model](#proposed-model)
+* [Documents](#documents)
+* [License](#license)
 
-##Installation
+## Installation
 You can try the Android version of the game downloading the apk at link CAMBIARE (link apk).
 
 If you want to check the game code and test the DRL algorithms, first download 
@@ -64,10 +64,10 @@ When the training is done, a ```agent.bytes``` file will be automatically stored
 in ```saved``` folder; you can import the file in Unity Editor and assign it 
 to any internal brain.
 
-## Features
+## Proposed model
 In this section will be described the main components of the DRL model.
 #### Neural net
-CAMBIARE (immagine rete neurale)
+![Neural Net](https://imgur.com/mlHRlot)
 #### Reward function
 CAMBIARE (immagine reward function)
 #### Training Set-up
