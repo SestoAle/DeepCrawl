@@ -10,7 +10,7 @@ moves the AI does!
 The game was developed in Unity, while the AI was built through Tensorforce and
 Unity ml-agents.  
 
-<img src="https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif" width="40" height="40" />
+<img src="https://media.giphy.com/media/9rcsCRmG2lFmorQuyF/giphy.gif" width="40" height="40" />
 
 The project was part of a Master thesis in Computer Engineering at 
 Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
