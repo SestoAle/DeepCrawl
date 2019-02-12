@@ -11,7 +11,7 @@ The game was developed in Unity, while the AI was built through Tensorforce and
 Unity ML-Agents.  
 
 <p align="center">
-<img src="https://media.giphy.com/media/m7WhRyZmEc4aCeLxGq/giphy.gif" alt="Game Screenshot" width="80%" height="80%">
+<img src="http://media.giphy.com/media/m7WhRyZmEc4aCeLxGq/giphy.gif" alt="Game Screenshot" width="80%" height="80%">
 </p>
 
 The project was part of a Master thesis in Computer Engineering at 
