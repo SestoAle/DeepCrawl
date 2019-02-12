@@ -5,7 +5,7 @@
 </p>
 
 DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
-are trained with Deep Reinforcement Learning algorithms.
+are trained with Deep Reinforcement Learning algorithms [1].
 
 The game is design to be hard, yet fair: the player will have to explore the 
 dungeons and defeat all the guardians of the rooms, paying attention to every 
@@ -15,7 +15,7 @@ moves the AI does!
 <img  src="https://media.giphy.com/media/1zlUEEeKTZTnaCXiww/giphy.gif" width="60%" height="60%"/>
 </p>
 
-The game was developed in Unity, while the AI was built through Tensorforce and
+The game was developed in Unity, while the AI was built through Tensorforce[2] and
 Unity ML-Agents.  
 
 The project was part of a Master thesis in Computer Engineering at 
@@ -96,7 +96,7 @@ In this section will be described the main components of the DRL model.
 
 
 ### Algorithim
-The algorithm used in this project is Proximal Policy Optimization
+The algorithm used in this project is Proximal Policy Optimization[3]
 (implemented in TensorForce). To see the whole set of hyperparameters, open
 ```deepcrawl_rl.py``` file.
 
@@ -133,6 +133,11 @@ A copy of the thesis presenation (italian) can be found
 <a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/presentation.pdf" download="presentation.pdf">here</a>.
 
 ## License
-
+Licensed under the term of [MIT License](https://github.com/SestoAle/DeepCrawl/blob/master/LICENSE).
 ## References
+[1]: Volodymyr Mnih et al. *Human-level control through deep reinforcement learning*. Nature, 518(7540):529–533, 2015. 
+
+[2]: Alexander Kuhnle et al. *Tensorforce: a tensorflow library for applied reinforcement learning*. Web page, 2017
+
+[3]: John Schulman et al. *Proximal policy optimization algorithms*. CoRR, abs/1707.06347, 2017. 
 
