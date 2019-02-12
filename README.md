@@ -70,7 +70,9 @@ to any internal brain.
 ## Proposed model
 In this section will be described the main components of the DRL model.
 #### Neural net
+<div style="text-align:center">
 <img src="https://i.imgur.com/FZzxbux.png" width="80%" height="80%" />
+</div>
 
 #### Reward function
 ![Reward function](https://i.imgur.com/S5LOfj0.png)
