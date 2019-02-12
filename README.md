@@ -30,14 +30,14 @@ the repository:
 git clone https://github.com/SestoAle/DeepCrawl.git
 ``` 
 then follow these instructions.
-#### Unity
+### Unity
 1. Open the folder ```DeepCrawl-Unity``` with Unity Editor;
 2. Download ```TensorFlowSharp``` 
 plugin [here](https://s3.amazonaws.com/unity-ml-agents/0.5/TFSharpPlugin.unitypackage) 
 and import it in the project. More information at CAMBIAre (link unity ml-agents);
 3. Close and re-open the editor;
 
-#### Prerequsites
+### Prerequsites
 CAMBIARE (tabellina requisiti)
 
 ## Usage and examples
@@ -67,17 +67,17 @@ to any internal brain.
 
 ## Proposed model
 In this section will be described the main components of the DRL model.
-#### Neural net
+### Neural net
 <p align="center">
 <img  src="https://i.imgur.com/FZzxbux.png" width="80%" height="80%" />
 </p>
 
-#### Reward function
+### Reward function
 <p align="center">
 <img  src="https://i.imgur.com/S5LOfj0.png" width="80%" height="80%" />
 </p>
 
-#### Training Set-up
+### Training Set-up
 The agent will be trained in a random room with curriculum learning: the values
 can be defined in the json in the ```deepcrawl_rl.py``` file. 
 In here, you can also specify the agent parameters (such as ATK, DEF and DEX), 
