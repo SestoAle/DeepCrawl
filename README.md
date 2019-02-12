@@ -5,7 +5,7 @@
 </p>
 
 DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
-are trained with Deep Reinforcement Learning algorithms [1](#references).
+are trained with Deep Reinforcement Learning algorithms [[1]](#references).
 
 The game is design to be hard, yet fair: the player will have to explore the 
 dungeons and defeat all the guardians of the rooms, paying attention to every 
