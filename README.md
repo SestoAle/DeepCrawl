@@ -15,7 +15,7 @@ moves the AI does!
 <img  src="https://media.giphy.com/media/1zlUEEeKTZTnaCXiww/giphy.gif" width="60%" height="60%"/>
 </p>
 
-The game was developed in Unity, while the AI was built through Tensorforce [2](#references) and
+The game was developed in Unity, while the AI was built through Tensorforce [[2]](#references) and
 Unity ML-Agents.  
 
 The project was part of a Master thesis in Computer Engineering at 
@@ -96,7 +96,7 @@ In this section will be described the main components of the DRL model.
 
 
 ### Algorithim
-The algorithm used in this project is Proximal Policy Optimization [3](#references)
+The algorithm used in this project is Proximal Policy Optimization [[3]](#references)
 (implemented in TensorForce). To see the whole set of hyperparameters, open
 ```deepcrawl_rl.py``` file.
 
