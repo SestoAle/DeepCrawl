@@ -7,11 +7,12 @@ The game is design to be hard, yet fair: the player will have to explore the
 dungeons and defeat all the guardians of the rooms, paying attention to every 
 moves the AI does!
 
-The game was developed in Unity, while the AI was built through Tensorforce and
-Unity ML-Agents.  
 <p align="center">
 <img  src="https://media.giphy.com/media/1zlUEEeKTZTnaCXiww/giphy.gif" width="50%" height="50%"/>
 </p>
+
+The game was developed in Unity, while the AI was built through Tensorforce and
+Unity ML-Agents.  
 
 The project was part of a Master thesis in Computer Engineering at 
 Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
@@ -71,14 +72,18 @@ to any internal brain.
 ## Proposed model
 In this section will be described the main components of the DRL model.
 ### Neural net
+
 <p align="center">
 <img  src="https://i.imgur.com/FZzxbux.png" width="80%" height="80%" hspace="100"/>
 </p>
 
+
 ### Reward function
+
 <p align="center">
 <img  src="https://i.imgur.com/S5LOfj0.png" width="80%" height="80%" style="padding:10px"/>
 </p>
+
 
 ### Algorithim
 The algorithm used in this project is Proximal Policy Optimization
