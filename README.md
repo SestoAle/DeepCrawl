@@ -73,7 +73,10 @@ In this section will be described the main components of the DRL model.
 </p>
 
 #### Reward function
-![Reward function](https://i.imgur.com/S5LOfj0.png)
+<p align="center">
+<img  src="https://i.imgur.com/S5LOfj0.png" width="80%" height="80%" />
+</p>
+
 #### Training Set-up
 The agent will be trained in a random room with curriculum learning: the values
 can be defined in the json in the ```deepcrawl_rl.py``` file. 
