@@ -1,6 +1,5 @@
 # DeepCrawl
 
-### Introduction
 <p align="center">
 <img  src="https://i.imgur.com/MYSfkln.png" width="80%" height="80%"/>
 </p>
