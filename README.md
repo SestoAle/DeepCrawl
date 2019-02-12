@@ -29,6 +29,7 @@ Learning for turn-based strategy games".
 * [Proposed model](#proposed-model)
 * [Documents](#documents)
 * [License](#license)
+* [References](#References)
 
 ## Installation
 You can try the Android version of the game downloading the apk at [link](https://drive.google.com/uc?export=download&confirm=LXxR&id=1Zrbnicqz6T4ty83Eo6fHZjRPPYXrFyA9).
@@ -44,7 +45,7 @@ then follow these instructions.
 2. Download ```TensorFlowSharp``` 
 plugin [here](https://s3.amazonaws.com/unity-ml-agents/0.5/TFSharpPlugin.unitypackage) 
 and import it in the project. More information at [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents);
-3. Close and re-open the editor;
+3. Close and re-open the editor.
 
 ### Prerequsites
 | Software                                                 | Version         | Required |
@@ -131,4 +132,8 @@ A copy of the thesis document (italian) can be found
 
 A copy of the thesis presenation (italian) can be found
 <a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/presentation.pdf" download="presentation.pdf">here</a>.
+
+## License
+
+## References
 
