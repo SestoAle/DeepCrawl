@@ -5,7 +5,7 @@
 </p>
 
 DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
-are trained with Deep Reinforcement Learning algorithms [1].
+are trained with Deep Reinforcement Learning algorithms [1](#references).
 
 The game is design to be hard, yet fair: the player will have to explore the 
 dungeons and defeat all the guardians of the rooms, paying attention to every 
@@ -15,7 +15,7 @@ moves the AI does!
 <img  src="https://media.giphy.com/media/1zlUEEeKTZTnaCXiww/giphy.gif" width="60%" height="60%"/>
 </p>
 
-The game was developed in Unity, while the AI was built through Tensorforce[2] and
+The game was developed in Unity, while the AI was built through Tensorforce [2](#references) and
 Unity ML-Agents.  
 
 The project was part of a Master thesis in Computer Engineering at 
@@ -28,7 +28,7 @@ Learning for turn-based strategy games".
 * [Proposed model](#proposed-model)
 * [Documents](#documents)
 * [License](#license)
-* [References](#References)
+* [References](#references)
 
 ## Installation
 You can try the Android version of the game downloading the apk at [link](https://drive.google.com/uc?export=download&confirm=LXxR&id=1Zrbnicqz6T4ty83Eo6fHZjRPPYXrFyA9).
@@ -96,7 +96,7 @@ In this section will be described the main components of the DRL model.
 
 
 ### Algorithim
-The algorithm used in this project is Proximal Policy Optimization[3]
+The algorithm used in this project is Proximal Policy Optimization [3](#references)
 (implemented in TensorForce). To see the whole set of hyperparameters, open
 ```deepcrawl_rl.py``` file.
 
