@@ -34,7 +34,7 @@ then follow these instructions.
 1. Open the folder ```DeepCrawl-Unity``` with Unity Editor;
 2. Download ```TensorFlowSharp``` 
 plugin [here](https://s3.amazonaws.com/unity-ml-agents/0.5/TFSharpPlugin.unitypackage) 
-and import it in the project. More information at CAMBIAre (link unity ml-agents);
+and import it in the project. More information at [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents);
 3. Close and re-open the editor;
 
 ### Prerequsites
@@ -58,7 +58,7 @@ python3 deepcrawl_rl.py
 ```  
 
 You can specify the agent statistics modifying the curriculum json in the 
-```deepcrawl_rl.py``` file. For more information see features CAMBIARE (link feature):
+```deepcrawl_rl.py``` file. For more information see [proposed model](#proposed-model):
 
 
 When the training is done, a ```agent.bytes``` file will be automatically stored 
@@ -105,6 +105,7 @@ curriculum = {
 ## Documents
 A copy of the thesis document (italian) can be found 
 [here](documents/thesis.pdf).
+<a href="documents/thesis.pdf" download>Click to Download</a>
 
 A copy of the thesis presenation (italian) can be found
 <a href="documents/presentation.pdf" download="presentation.pdf">here</a>.
