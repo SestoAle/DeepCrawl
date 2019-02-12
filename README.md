@@ -1,7 +1,7 @@
 # DeepCrawl
 
 <p align="center">
-<img  src="https://i.imgur.com/Y2Yj7uh.png" width="80%" height="80%"/>
+<img  src="https://i.imgur.com/CXtA96C.png" width="80%" height="80%"/>
 </p>
 
 DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
