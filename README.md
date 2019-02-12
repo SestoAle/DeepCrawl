@@ -72,7 +72,7 @@ python3 deepcrawl_rl.py
 ```  
 
 You can specify the agent statistics modifying the curriculum json in the 
-```deepcrawl_rl.py``` file. For more information see [proposed model](#proposed-model):
+```deepcrawl_rl.py``` file. For more information see [proposed model](#proposed-model).
 
 
 When the training is done, a ```agent.bytes``` file will be automatically stored 
