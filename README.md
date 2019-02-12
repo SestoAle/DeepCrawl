@@ -10,8 +10,6 @@ moves the AI does!
 The game was developed in Unity, while the AI was built through Tensorforce and
 Unity ml-agents.  
 
-<img src="https://media.giphy.com/media/9rcsCRmG2lFmorQuyF/giphy.gif" width="40" height="40" />
-
 The project was part of a Master thesis in Computer Engineering at 
 Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
 Learning for turn-based strategy games".
@@ -70,9 +68,9 @@ to any internal brain.
 ## Proposed model
 In this section will be described the main components of the DRL model.
 #### Neural net
-<div style="text-align:center">
-<img src="https://i.imgur.com/FZzxbux.png" width="80%" height="80%" />
-</div>
+<p align="center">
+<img  src="https://i.imgur.com/FZzxbux.png" width="80%" height="80%" />
+</p>
 
 #### Reward function
 ![Reward function](https://i.imgur.com/S5LOfj0.png)
