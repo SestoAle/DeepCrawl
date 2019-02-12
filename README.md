@@ -66,7 +66,7 @@ python3 deepcrawl_rl.py --game-name="envs/DeepCrawl-training-env"
 change the flag ```isTraining``` in ```BoardManagerSystem``` game object, then 
 change the ```TrainBrain``` game object to ```External``` (for more information,
 see [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)). After that, run the command and follow the 
-instruction on screen:
+instructions on screen:
 ```bash
 python3 deepcrawl_rl.py 
 ```  
