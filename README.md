@@ -1,5 +1,10 @@
 # DeepCrawl
-#### Introduction
+
+<p align="center">
+<img  src="https://i.imgur.com/MYSfkln.png" width="80%" height="80%"/>
+</p>
+
+# Introduction
 DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
 are trained with Deep Reinforcement Learning algorithms.
 
