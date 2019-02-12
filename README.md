@@ -10,7 +10,7 @@ moves the AI does!
 The game was developed in Unity, while the AI was built through Tensorforce and
 Unity ML-Agents.  
 <p align="center">
-<img  src="https://media.giphy.com/media/9uI9fUg9ItkhsmvJKt/giphy.gif" width="80%" height="80%" />
+<img  src="https://media.giphy.com/media/1zlUEEeKTZTnaCXiww/giphy.gif" width="50%" height="50%" />
 </p>
 
 The project was part of a Master thesis in Computer Engineering at 
