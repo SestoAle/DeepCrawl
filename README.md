@@ -78,7 +78,7 @@ In this section will be described the main components of the DRL model.
 
 ### Reward function
 <p align="center">
-<img  src="https://i.imgur.com/S5LOfj0.png" width="80%" height="80%" padding="10"/>
+<img  src="https://i.imgur.com/S5LOfj0.png" width="80%" height="80%" style="padding:10px"/>
 </p>
 
 ### Training Set-up
