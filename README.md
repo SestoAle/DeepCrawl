@@ -8,7 +8,7 @@ dungeons and defeat all the guardians of the rooms, paying attention to every
 moves the AI does!
 
 The game was developed in Unity, while the AI was built through Tensorforce and
-Unity ml-agents.  
+Unity ML-Agents.  
 
 <p align="center">
 <img src="https://media.giphy.com/media/m7WhRyZmEc4aCeLxGq/giphy.gif" alt="Game Screenshot" width="80%" height="80%">
