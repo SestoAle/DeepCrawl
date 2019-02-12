@@ -12,7 +12,7 @@ Unity ml-agents.
 
 <p align="center">
 <img src="https://media.giphy.com/media/m7WhRyZmEc4aCeLxGq/giphy.gif" alt="Game Screenshot" width="80%" height="80%">
-<\p>
+</p>
 
 The project was part of a Master thesis in Computer Engineering at 
 Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
