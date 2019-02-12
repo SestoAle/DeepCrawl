@@ -42,7 +42,12 @@ and import it in the project. More information at [Unity ML-Agents](https://gith
 3. Close and re-open the editor;
 
 ### Prerequsites
-CAMBIARE (tabellina requisiti)
+| Software                                                 | Version         | Required |
+| ---------------------------------------------------------|-----------------| ---------|
+| **Python**                                               |     tested on v3.7      |    Yes   |
+| **Unity** | tested on v2018.2.17f1 | Yes |
+| **Tensorflow** | tested on v1.12.0 | Yes |
+| **Tensorforce** | tested on v0.4.3 | Yes |
 
 ## Usage and examples
 There are more methods to train one agent with the model described in [proposed model](#proposed-model) section:
