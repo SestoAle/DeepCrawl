@@ -108,11 +108,10 @@ curriculum = {
 ```
 ## Documents
 A copy of the thesis document (italian) can be found 
-[here](documents/thesis.pdf).
-<a href="documents/thesis.pdf" download>Click to Download</a>
+<a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/thesis.pdf" download="thesis.pdf">here</a>.
 
 A copy of the thesis presenation (italian) can be found
-<a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/thesis.pdf" download="presentation.pdf">here</a>.
+<a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/presentation.pdf" download="presentation.pdf">here</a>.
  
 ## License
 CAMBIARE (mit license)
