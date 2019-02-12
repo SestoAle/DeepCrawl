@@ -9,10 +9,7 @@ moves the AI does!
 
 The game was developed in Unity, while the AI was built through Tensorforce and
 Unity ML-Agents.  
-![](http://i.imgur.com/Ssfp7.gif)
-<p align="center">
-<img src="http://media.giphy.com/media/m7WhRyZmEc4aCeLxGq/giphy.gif" alt="Game Screenshot" width="80%" height="80%">
-</p>
+<div style="width:100%;height:0;padding-bottom:75%;position:relative;"><iframe src="https://giphy.com/embed/m7WhRyZmEc4aCeLxGq" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/m7WhRyZmEc4aCeLxGq">via GIPHY</a></p>
 
 The project was part of a Master thesis in Computer Engineering at 
 Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
