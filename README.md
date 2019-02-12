@@ -9,7 +9,7 @@ moves the AI does!
 
 The game was developed in Unity, while the AI was built through Tensorforce and
 Unity ML-Agents.  
-
+![](http://i.imgur.com/Ssfp7.gif)
 <p align="center">
 <img src="http://media.giphy.com/media/m7WhRyZmEc4aCeLxGq/giphy.gif" alt="Game Screenshot" width="80%" height="80%">
 </p>
@@ -73,7 +73,9 @@ to any internal brain.
 In this section will be described the main components of the DRL model.
 ### Neural net
 <p align="center">
+<kbd>
 <img  src="https://i.imgur.com/FZzxbux.png" width="80%" height="80%" />
+</kbd>
 </p>
 
 ### Reward function
