@@ -25,7 +25,7 @@ Learning for turn-based strategy games".
 * [License](#license)
 
 ## Installation
-You can try the Android version of the game downloading the apk at link CAMBIARE (link apk).
+You can try the Android version of the game downloading the apk at [link](https://drive.google.com/uc?export=download&confirm=LXxR&id=1Zrbnicqz6T4ty83Eo6fHZjRPPYXrFyA9).
 
 If you want to check the game code and test the DRL algorithms, first download 
 the repository:
@@ -44,7 +44,7 @@ and import it in the project. More information at [Unity ML-Agents](https://gith
 CAMBIARE (tabellina requisiti)
 
 ## Usage and examples
-There are more methods to train one agent with the model described in features CAMBIARE (hyperlink a feature):
+There are more methods to train one agent with the model described in [proposed model](#proposed-model) section:
 * for Linux system, the repository provides a built environment which can be
 used to start the training without Unity Editor:
 ```bash
@@ -54,7 +54,7 @@ python3 deepcrawl_rl.py --game-name="envs/DeepCrawl-training-env"
 * you can start the training directly from Unity Editor. First you have to 
 change the flag ```isTraining``` in ```BoardManagerSystem``` game object, then 
 change the ```TrainBrain``` game object to ```External``` (for more information,
-see CAMBIARE (link unity ml-agents)). After that, run the command and follow the 
+see [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)). After that, run the command and follow the 
 instruction on screen:
 ```bash
 python3 deepcrawl_rl.py 
@@ -79,6 +79,11 @@ In this section will be described the main components of the DRL model.
 <p align="center">
 <img  src="https://i.imgur.com/S5LOfj0.png" width="80%" height="80%" style="padding:10px"/>
 </p>
+
+### Algorithim
+The algorithm used in this project is Proximal Policy Optimization
+(implemented in TensorForce). To see the whole set of hyperparameters, open
+```deepcrawl_rl.py``` file.
 
 ### Training Set-up
 The agent will be trained in a random room with curriculum learning: the values
@@ -111,6 +116,4 @@ A copy of the thesis document (italian) can be found
 
 A copy of the thesis presenation (italian) can be found
 <a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/presentation.pdf" download="presentation.pdf">here</a>.
- 
-## License
-CAMBIARE (mit license)
+
