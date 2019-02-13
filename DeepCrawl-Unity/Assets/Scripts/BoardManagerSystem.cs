@@ -50,7 +50,7 @@ public class BoardManagerSystem : MonoBehaviour
   public float maxNumberLoot = 0.08f;
   public float minNumberLoot = 0.04f;
   public float chestProbability = 0.10f;
-  public GameObject[] items;
+  public List<GameObject> loots;
   public GameObject chestPrefab;
   [Space(10)]
 
@@ -72,6 +72,8 @@ public class BoardManagerSystem : MonoBehaviour
   public ObjectPool cornerVerWallPool;
   public ObjectPool altarPool;
   public ObjectPool chestPool;
+  public GameObject lootPoolsContainer;
+  public List<ObjectPool> lootPools;
   public RandomObjectPool itemPool;
   public EnemyPool enemyPool;
   [Space(10)]
@@ -81,8 +83,6 @@ public class BoardManagerSystem : MonoBehaviour
   public GameObject OuterContainer;
   [HideInInspector]
   public GameObject PlayersContainer;
-  [HideInInspector]
-  public GameObject ItemsContainer;
   [HideInInspector]
   public GameObject Level;
 
@@ -159,6 +159,9 @@ public class BoardManagerSystem : MonoBehaviour
 
     //Sets this to not be destroyed when reloading scene
     DontDestroyOnLoad(gameObject);
+
+    // Create the loot pools only once the game started
+    createLootPools();
   }
 
   // Use this for initialization
@@ -176,8 +179,6 @@ public class BoardManagerSystem : MonoBehaviour
     entityManager = World.Active.GetExistingManager<EntityManager>();
     // Create Level object and all of containers
     Level = new GameObject("Level");
-    ItemsContainer = new GameObject("ItemsContainer");
-    ItemsContainer.transform.parent = Level.transform;
     OuterContainer = new GameObject("OuterContainer");
     OuterContainer.transform.parent = Level.transform;
     if (isTraning)
@@ -209,9 +210,6 @@ public class BoardManagerSystem : MonoBehaviour
     // The number of the rooms is equal to the level + 1
     numRooms = level + 1;
     // Create all the container
-    if (ItemsContainer == null)
-      ItemsContainer = new GameObject("ItemsContainer");
-    ItemsContainer.transform.parent = Level.transform;
     if (PlayersContainer == null)
       PlayersContainer = new GameObject("PlayersContainer");
     PlayersContainer.transform.parent = Level.transform;
@@ -223,29 +221,69 @@ public class BoardManagerSystem : MonoBehaviour
     board = new Board(numRooms, 10);
   }
 
-  // Get a random item from the item lists with cumulative probs technique 
-  // (each item must have a spawn probability)
-  public GameObject getRandomItem()
+  // Create the loot pools
+  public void createLootPools()
+  {
+    // Initialize list of loot objects pools
+    lootPools = new List<ObjectPool>();
+    // Sort the loots by their spawn probability
+    loots = loots.OrderBy(o => o.GetComponent<Item>().spawnProbability).ToList();
+    foreach (GameObject loot in loots)
+    {
+      // For each loots, create the pool
+      GameObject lootPoolObject = new GameObject();
+      lootPoolObject.name = loot.name + "Pool";
+      Instantiate(lootPoolObject);
+      lootPoolObject.transform.parent = lootPoolsContainer.transform;
+      ObjectPool lootPool = lootPoolObject.AddComponent<ObjectPool>() as ObjectPool;
+
+      // Initialize the pool
+      lootPool.count = 10;
+      lootPool.prefab = loot;
+      lootPool.initialize();
+
+      lootPools.Add(lootPool);
+    }
+  }
+
+  // Get a random loot from the loot lists with cumulative probs technique 
+  // (each loot must have a spawn probability)
+  public GameObject getRandomLootWithProb()
   {
     // Compute the cumulative prob
-    float total = items.Sum(i => i.GetComponent<Item>().spawnProbability);
+    float total = loots.Sum(i => i.GetComponent<Item>().spawnProbability);
     // Choose a random number between 0 and the sum
     float r = Random.Range(0.0f, total);
     float sum = 0f;
     // For each item in list
-    foreach (GameObject i in items)
+    for (int i = 0; i < loots.Count; i++)
     {
+      // Get GameObject from loots pool
+      GameObject loot = loots[i];
+
       // Add to sum its spawn prob
-      sum += i.GetComponent<Item>().spawnProbability;
+      sum += loot.GetComponent<Item>().spawnProbability;
 
       // If the random number is less then the sum at thispoint
       if (r <= sum)
       {
-        // return the item
-        return i;
+        // Get the pool of the loot
+        ObjectPool pool = lootPools[i];
+        // return the loot from the previous pool
+        return pool.getPooledObject();
       }
     }
     return null;
+  }
+
+  // Get a total random loot
+  public GameObject getRandomLoot()
+  {
+    // Get a random pool from loot pools
+    ObjectPool pool = lootPools[Random.Range(0, lootPools.Count)];
+
+    // Return the gameobject from the previous pool
+    return pool.getPooledObject();
   }
 
   // Get a random tile from the board
@@ -496,9 +534,9 @@ public class BoardManagerSystem : MonoBehaviour
     leftWindowPool.destroyAllObjects();
     rightWindowPool.destroyAllObjects();
     cornerWallPool.destroyAllObjects();
-    for (int i = 0; i < ItemsContainer.transform.childCount; i++)
+    foreach(ObjectPool lootPool in lootPools)
     {
-      Destroy(ItemsContainer.transform.GetChild(i).gameObject);
+      lootPool.destroyAllObjects();
     }
 
     // Generate a new board
@@ -593,7 +631,6 @@ public class BoardManagerSystem : MonoBehaviour
       playerStats = removeBuff(playerStats, buff);
     }
     Destroy(PlayersContainer);
-    Destroy(ItemsContainer);
     tilePool.destroyAllObjects();
     tileDirtPool.destroyAllObjects();
     wallPool.destroyAllObjects();
@@ -606,6 +643,10 @@ public class BoardManagerSystem : MonoBehaviour
     leftDoorPool.destroyAllObjects();
     rightDoorPool.destroyAllObjects();
     altarPool.destroyAllObjects();
+    foreach(ObjectPool lootPool in lootPools)
+    {
+      lootPool.destroyAllObjects();
+    }
 
     Start();
   }
@@ -665,9 +706,15 @@ public class BoardManagerSystem : MonoBehaviour
         tile.GetComponent<Tile>().resetTile();
         tile.GetComponent<BoxCollider>().enabled = true;
         // Instantiate a random item
-        GameObject spawnItem = Instantiate(getRandomItem());
-        // Set parent
-        spawnItem.transform.parent = ItemsContainer.transform;
+        GameObject spawnItem;
+        if(isTraning)
+        {
+          spawnItem = getRandomLoot();
+        }
+        else
+        {
+          spawnItem = getRandomLootWithProb();
+        }
         // Set item in the tile
         tile.GetComponent<Tile>().setItem(spawnItem.GetComponent<Item>());
         // Set item spawn position
@@ -880,7 +927,6 @@ public class BoardManagerSystem : MonoBehaviour
   public GameObject instantiateChest()
   {
     GameObject chest = Instantiate(chestPrefab);
-    chest.transform.parent = ItemsContainer.transform;
     return chest;
   }
 
@@ -976,6 +1022,14 @@ public class BoardManagerSystem : MonoBehaviour
     {
       this.tile = tile;
       this.dist = float.PositiveInfinity;
+    }
+  }
+
+  private void Update()
+  {
+    if(Input.GetKey(KeyCode.Space))
+    {
+      resetTraining();
     }
   }
 }

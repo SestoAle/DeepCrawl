@@ -7,7 +7,7 @@ public class ObjectPool : MonoBehaviour
 {
   public GameObject prefab;
 
-  public List<GameObject> pool;
+  public List<GameObject> pool = new List<GameObject>();
 
   public Quaternion defaultRotation;
 
@@ -15,15 +15,26 @@ public class ObjectPool : MonoBehaviour
 
   private void Awake()
   {
-    // When awake, instantiate the objects and set them to False
-    for (int i = 0; i < count; i ++)
+    if(prefab != null)
     {
-      GameObject poolObject = Instantiate(prefab);
-      defaultRotation = poolObject.transform.rotation;
-      poolObject.transform.parent = transform;
-      poolObject.SetActive(false);
-      pool.Add(poolObject);
+      // When awake, instantiate the objects and set them to False
+      for (int i = 0; i < count; i++)
+      {
+        GameObject poolObject = Instantiate(prefab);
+        defaultRotation = poolObject.transform.rotation;
+        poolObject.transform.parent = transform;
+        poolObject.SetActive(false);
+        pool.Add(poolObject);
+      }
     }
+  }
+
+  public bool initialize()
+  {
+    if (prefab == null || pool.Count > 0)
+      return false;
+    Awake();
+    return true;
   }
 
   public GameObject getPooledObject()
@@ -60,5 +71,4 @@ public class ObjectPool : MonoBehaviour
       pool[i].SetActive(false);
     }
   }
-
 }
