@@ -38,7 +38,7 @@ the repository:
 ```bash
 git clone https://github.com/SestoAle/DeepCrawl.git
 ``` 
-then install all the [prerequisites](#prerequisites) and follow these instructions.
+then install all the [prerequisites](#prerequsites) and follow these instructions.
 ### Unity
 1. Open the folder ```DeepCrawl-Unity``` with Unity Editor;
 2. Download ```TensorFlowSharp``` 
