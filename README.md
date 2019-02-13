@@ -126,11 +126,11 @@ curriculum = {
         }
 }
 ```
-## Documents
-A copy of the thesis document (italian) can be found 
+## Reports
+A copy of the thesis (italian) can be found 
 <a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/thesis.pdf" download="thesis.pdf">here</a>.
 
-A copy of the thesis presentation (italian) can be found
+A copy of the presentation (italian) can be found
 <a href="https://github.com/SestoAle/DeepCrawl/raw/master/documents/presentation.pdf" download="presentation.pdf">here</a>.
 
 ## License
