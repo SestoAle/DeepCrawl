@@ -51,6 +51,7 @@ and import it in the project. More information at [Unity ML-Agents](https://gith
 | ---------------------------------------------------------|-----------------| ---------|
 | **Python**                                               |     tested on v3.7      |    Yes   |
 | **Unity** | tested on v2018.2.17f1 | Yes |
+| **ml-agents** | tested on v0.5.0 | Yes | 
 | **Tensorflow** | tested on v1.12.0 | Yes |
 | **Tensorforce** | tested on v0.4.3 | Yes |
 
