@@ -95,6 +95,7 @@ public class ItemSystem : JobComponentSystem
       playerGroup = m_playerGroup,
       commandBuffer = barrier.CreateCommandBuffer()
     };
+
     return job.Schedule(m_itemGroup.Length, 64, inputDeps);
   }
 

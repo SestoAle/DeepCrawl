@@ -163,6 +163,14 @@ public class BoardManagerSystem : MonoBehaviour
 
     // Create the loot pools only once the game started
     createLootPools();
+    // In training, disable job system, they are useless
+    if (isTraning)
+    {
+      World.Active.GetExistingManager<WallSystem>().Enabled = false;
+      World.Active.GetExistingManager<ItemSystem>().Enabled = false;
+      World.Active.GetExistingManager<WallBarrier>().Enabled = false;
+      World.Active.GetExistingManager<ItemBarrier>().Enabled = false;
+    }
   }
 
   // Use this for initialization
@@ -204,12 +212,6 @@ public class BoardManagerSystem : MonoBehaviour
     GameManager.instance.gameUI.resetText();
     if (!isTraning)
       GameManager.instance.gameUI.moveCameraAtPosition(activePlayer.transform.position.x, activePlayer.transform.position.y);
-    if(isTraning)
-    {
-      World.Active.GetExistingManager<WallSystem>().Enabled = false;
-      World.Active.GetExistingManager<ItemSystem>().Enabled = false;
-    }
-      
   }
 
   void generateBoard()
