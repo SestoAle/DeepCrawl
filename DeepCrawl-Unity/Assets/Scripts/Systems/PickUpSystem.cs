@@ -95,7 +95,8 @@ public class PickUpSystem : ComponentSystem
         BoardManagerSystem.instance.getTileFromObject(data.GameObjects[i]).setItem(null);
         puc.RemoveComponent<Pickable>(data.Entity[i]);
         //GameManager.instance.DestroyGameObject(data.GameObjects[i]);
-        data.Renderers[i].enabled = false;
+        if(!BoardManagerSystem.instance.isTraning)
+          data.Renderers[i].enabled = false;
       }
     }
   }

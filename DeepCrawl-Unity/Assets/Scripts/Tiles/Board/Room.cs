@@ -244,7 +244,8 @@ public class Room
       // Instantiate the tile and the objects
       instantiateTiles();
       // Instantiate the wall of the room
-      instantiateRoomWall();
+      if(!BoardManagerSystem.instance.isTraning)
+        instantiateRoomWall();
 
       // If is the starting room and is not level 1, add the altar
       if (id == 0 && BoardManagerSystem.instance.level != 1 && !BoardManagerSystem.instance.isTraning)

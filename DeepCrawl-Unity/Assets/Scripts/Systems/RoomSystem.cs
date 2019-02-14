@@ -24,6 +24,7 @@ public class RoomSystem : ComponentSystem
     {
       return;
     }
+
     for (int i = 0; i < data.Length; i++)
     {
       // If it's the beginning, obscure all the rooms

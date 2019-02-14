@@ -1,12 +1,17 @@
-13/02/2019 11:58:38
+14/02/2019 17:00:54
  
+Warning
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+UnityEngine.Object:DontDestroyOnLoad()
+GameManager:Awake() (at Assets/Scripts/GameManager.cs:50)
+
 Log
-The Agent component attached to the GameObject Skeleton Archer(Clone) was initialized without a brain.
+The Agent component attached to the GameObject Training Agent(Clone) was initialized without a brain.
 UnityEngine.Debug:Log(Object)
 MLAgents.Agent:OnEnableHelper(Academy) (at Assets/ML-Agents/Scripts/Agent.cs:308)
 MLAgents.Agent:OnEnable() (at Assets/ML-Agents/Scripts/Agent.cs:280)
 UnityEngine.Object:Instantiate(GameObject)
-BoardManagerSystem:createCharacter(GameObject, Int32, Int32, Int32, DIRECTION) (at Assets/Scripts/BoardManagerSystem.cs:418)
-BoardManagerSystem:generateCharacters() (at Assets/Scripts/BoardManagerSystem.cs:353)
-BoardManagerSystem:Start() (at Assets/Scripts/BoardManagerSystem.cs:202)
+BoardManagerSystem:createCharacter(GameObject, Int32, Int32, Int32, DIRECTION) (at Assets/Scripts/BoardManagerSystem.cs:434)
+BoardManagerSystem:generateCharacters() (at Assets/Scripts/BoardManagerSystem.cs:369)
+BoardManagerSystem:Start() (at Assets/Scripts/BoardManagerSystem.cs:218)
 

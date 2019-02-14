@@ -271,12 +271,15 @@ public class Tile : MonoBehaviour
       Mathf.Clamp01(material.color.b * threshold)
     );
 
-    iTween.ColorTo(tileObject, iTween.Hash(
-      "color", animatedColor,
-      "time", time,
-      "easetype", iTween.EaseType.linear,
-      "looptype", iTween.LoopType.pingPong
-    ));
+    if(!BoardManagerSystem.instance.isTraning)
+      {
+        iTween.ColorTo(tileObject, iTween.Hash(
+        "color", animatedColor,
+        "time", time,
+        "easetype", iTween.EaseType.linear,
+        "looptype", iTween.LoopType.pingPong
+      ));
+    }
   }
 
   // Stop the highlight animation
@@ -284,7 +287,8 @@ public class Tile : MonoBehaviour
   {
     isHighlighted = false;
     isSelected = false;
-    iTween.Stop(tileObject);
+    if(!BoardManagerSystem.instance.isTraning)
+      iTween.Stop(tileObject);
   }
 
   // Start the select animation
@@ -300,12 +304,15 @@ public class Tile : MonoBehaviour
       Mathf.Clamp01(material.color.b * 0.5f)
     );
 
-    iTween.ColorTo(tileObject, iTween.Hash(
-      "color", animatedColor,
-      "time", time,
-      "easetype", iTween.EaseType.linear,
-      "looptype", iTween.LoopType.pingPong
-    ));
+    if (!BoardManagerSystem.instance.isTraning)
+    {
+      iTween.ColorTo(tileObject, iTween.Hash(
+        "color", animatedColor,
+        "time", time,
+        "easetype", iTween.EaseType.linear,
+        "looptype", iTween.LoopType.pingPong
+      ));
+    }
   }
 
   // Return true if tile is a neighbour of this tile

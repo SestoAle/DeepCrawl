@@ -413,7 +413,7 @@ agent = PPOAgent(
 work_id = 0
 
 # Number of episodes of a single run
-num_episodes = 3000
+num_episodes = 10
 # Number of timesteps within an episode
 num_timesteps = 100
 lstm = True
@@ -522,7 +522,7 @@ try:
         environment = UnityEnvWrapper(UnityEnvironment(game_name, no_graphics=True, seed=int(time.time()),
                                                         worker_id=work_id), with_stats=True, size_stats=11,
                                                         size_global=10, agent_separate=False, with_class=False, with_hp=False,
-                                                        with_previous=lstm, verbose=True, manual_input=False)
+                                                        with_previous=lstm, verbose=False, manual_input=False)
 
         # Create the runner to run the algorithm
         runner = DeepCrawlRunner(agent=agent, environment=environment, history=history, curriculum=curriculum)

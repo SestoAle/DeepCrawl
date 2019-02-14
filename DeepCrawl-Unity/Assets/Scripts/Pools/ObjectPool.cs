@@ -46,11 +46,14 @@ public class ObjectPool : MonoBehaviour
       {
         pool[i].SetActive(true);
         pool[i].transform.rotation = defaultRotation;
-        StandardShaderUtils.ChangeRenderMode(pool[i].GetComponent<Renderer>().material, StandardShaderUtils.BlendMode.Opaque);
-        foreach(Renderer renderer in pool[i].GetComponentsInChildren<Renderer>())
+        if (!BoardManagerSystem.instance.isTraning)
         {
-          // Reset its shader to opaque mode
-          StandardShaderUtils.ChangeRenderMode(renderer.material, StandardShaderUtils.BlendMode.Opaque);
+          StandardShaderUtils.ChangeRenderMode(pool[i].GetComponent<Renderer>().material, StandardShaderUtils.BlendMode.Opaque);
+          foreach (Renderer renderer in pool[i].GetComponentsInChildren<Renderer>())
+          {
+            // Reset its shader to opaque mode
+            StandardShaderUtils.ChangeRenderMode(renderer.material, StandardShaderUtils.BlendMode.Opaque);
+          }
         }
         return pool[i];
       }

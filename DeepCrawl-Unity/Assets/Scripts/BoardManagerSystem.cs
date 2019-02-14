@@ -162,7 +162,11 @@ public class BoardManagerSystem : MonoBehaviour
     DontDestroyOnLoad(gameObject);
 
     // Create the loot pools only once the game started
-    createLootPools();
+    if(lootPools.Count <= 0)
+    {
+      createLootPools();
+    }
+
     // In training, disable job system, they are useless
     if (isTraning)
     {
@@ -205,12 +209,15 @@ public class BoardManagerSystem : MonoBehaviour
     totalPlayers = numPlayers + numAgents;
     // Create battle board
     generateBoard();
-    deSelectAll();
-    deHighlightAll();
+    if(!isTraning)
+    {
+      deSelectAll();
+      deHighlightAll();
+    }
     // Create characters on the board
     generateCharacters();
     GameManager.instance.gameUI.resetText();
-    if (!isTraning)
+    //if (!isTraning)
       GameManager.instance.gameUI.moveCameraAtPosition(activePlayer.transform.position.x, activePlayer.transform.position.y);
   }
 
@@ -242,7 +249,6 @@ public class BoardManagerSystem : MonoBehaviour
       // For each loots, create the pool
       GameObject lootPoolObject = new GameObject();
       lootPoolObject.name = loot.name + "Pool";
-      Instantiate(lootPoolObject);
       lootPoolObject.transform.parent = lootPoolsContainer.transform;
       ObjectPool lootPool = lootPoolObject.AddComponent<ObjectPool>() as ObjectPool;
 
@@ -356,6 +362,7 @@ public class BoardManagerSystem : MonoBehaviour
         if (enemy == 1 && !doubleAgent)
         {
           character = createCharacter(trainingPrefab, x, y, numPlayers + enemy, DIRECTION.South);
+          activePlayer = character;
         }
         else
         {
@@ -619,8 +626,11 @@ public class BoardManagerSystem : MonoBehaviour
 
       if (entityManager.GetComponentData<Turn>(character.GetComponent<Character>().Entity).hasTurn == 1)
       {
-        deHighlightAll();
-        getTileFromObject(character).highlightNeighbours();
+        if(!isTraning)
+        {
+          deHighlightAll();
+          getTileFromObject(character).highlightNeighbours();
+        }
       }
     }
     // Restart the agent (to avoid accademy error)

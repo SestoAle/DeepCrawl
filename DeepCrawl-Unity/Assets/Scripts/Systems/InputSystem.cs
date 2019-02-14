@@ -138,7 +138,13 @@ public class InputSystem : ComponentSystem
           {
             // Highlights the neighbours
             if (data.GameObject[i].tag == "Player")
-              startTile.highlightNeighbours();
+            {
+              if(!BoardManagerSystem.instance.isTraning)
+              {
+                startTile.highlightNeighbours();
+              }
+            }
+              
           }
 
           // Activate the range mode
@@ -256,7 +262,8 @@ public class InputSystem : ComponentSystem
               offset = clickedTile.getPosition() - startTile.getPosition();
 
               // If there is no enemy in the room, execute a long movement
-              if (clickedTile != null && (clickedTile.canMove() || clickedTile.hasInteractable()) && !startTile.parent.hasEnemy())
+              if (clickedTile != null && (clickedTile.canMove() || clickedTile.hasInteractable()) && !startTile.parent.hasEnemy()
+                  && !BoardManagerSystem.instance.isTraning)
               {
                 if (EntityManager.HasComponent<MovementElementBuffer>(data.Entity[i]))
                 {

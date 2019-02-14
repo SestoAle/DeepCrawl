@@ -19,6 +19,9 @@ public class FadeSystem : ComponentSystem
 
   protected override void OnUpdate()
   {
+    if (BoardManagerSystem.instance.isTraning)
+      return;
+
     for (int i = 0; i < data.Length; i++)
     {
       // Change the mode of this entity to Fade

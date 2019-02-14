@@ -18,6 +18,8 @@ public class PopupSystem : ComponentSystem
 
   protected override void OnUpdate()
   {
+    if (BoardManagerSystem.instance.isTraning)
+      return;
     // Manage the Popup Text to follow the entity that owns it
     for (int i = 0; i < data.Length; i++)
     {
