@@ -64,6 +64,9 @@ public class LongMovementSystem : ComponentSystem
   {
     for (int i = 0; i < data.Length; i++)
     {
+      if (BoardManagerSystem.instance.isTraning)
+        return;
+
       // Get the movement components buffer
       DynamicBuffer<MovementElementBuffer> mb = data.movementBuffers[i];
       if (mb.Length > 0)

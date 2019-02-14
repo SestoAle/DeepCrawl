@@ -122,6 +122,7 @@ public class BoardManagerSystem : MonoBehaviour
 
   [Header("---Characters Informations---")]
   public GameObject playerPrefab;
+  public GameObject trainingPrefab;
   public GameObject enemyPrefab;
   [HideInInspector]
   public GameObject activePlayer;
@@ -203,6 +204,12 @@ public class BoardManagerSystem : MonoBehaviour
     GameManager.instance.gameUI.resetText();
     if (!isTraning)
       GameManager.instance.gameUI.moveCameraAtPosition(activePlayer.transform.position.x, activePlayer.transform.position.y);
+    if(isTraning)
+    {
+      World.Active.GetExistingManager<WallSystem>().Enabled = false;
+      World.Active.GetExistingManager<ItemSystem>().Enabled = false;
+    }
+      
   }
 
   void generateBoard()
@@ -346,7 +353,7 @@ public class BoardManagerSystem : MonoBehaviour
 
         if (enemy == 1 && !doubleAgent)
         {
-          character = createCharacter(playerPrefab, x, y, numPlayers + enemy, DIRECTION.South);
+          character = createCharacter(trainingPrefab, x, y, numPlayers + enemy, DIRECTION.South);
         }
         else
         {

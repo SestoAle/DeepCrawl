@@ -84,6 +84,12 @@ public class ItemSystem : JobComponentSystem
   // Start the parallel job
   protected override JobHandle OnUpdate(JobHandle inputDeps)
   {
+    if (BoardManagerSystem.instance.isTraning)
+    {
+      this.Enabled = false;
+      barrier.Enabled = false;
+    }
+
     Job job = new Job() {
       itemGroup = m_itemGroup,
       playerGroup = m_playerGroup,

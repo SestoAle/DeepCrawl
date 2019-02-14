@@ -38,3 +38,10 @@ sysinfo.txt
 # file: ~/.gitignore_global
 .DS_Store
 .idea
+
+.Plugins
+.Plugins/
+*.Plugins
+*.Plugins/
+Plugins/
+Plugins.meta

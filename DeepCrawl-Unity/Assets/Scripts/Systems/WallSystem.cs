@@ -39,9 +39,6 @@ public class WallSystem : JobComponentSystem
 
     public void Execute(int i)
     {
-      if (BoardManagerSystem.instance.isTraning)
-        return;
-
       // Get the position of the player and the wall
       Position playerPosition = playerGroup.Position[0];
       WallPosition wallPosition = wallGroup.Position[i];
@@ -84,11 +81,19 @@ public class WallSystem : JobComponentSystem
 
   protected override JobHandle OnUpdate(JobHandle inputDeps)
   {
+
+    if (BoardManagerSystem.instance.isTraning)
+    {
+      this.Enabled = false;
+      barrier.Enabled = false;
+    }
+
     Job job = new Job() {
       wallGroup = m_wallGroup,
       playerGroup = m_playerGroup,
       commandBuffer = barrier.CreateCommandBuffer()
     };
+
     return job.Schedule(m_wallGroup.Length, 64, inputDeps);
   }
 
