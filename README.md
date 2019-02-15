@@ -135,6 +135,7 @@ A copy of the presentation (italian) can be found
 
 ## License
 Licensed under the term of [MIT License](https://github.com/SestoAle/DeepCrawl/blob/master/LICENSE).
+
 ## References
 [1]: Volodymyr Mnih et al. *Human-level control through deep reinforcement learning*. Nature, 518(7540):529–533, 2015. 
 
