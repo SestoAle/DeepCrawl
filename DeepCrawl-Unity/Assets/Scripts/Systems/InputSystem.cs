@@ -5,6 +5,7 @@ using Unity.Entities;
 using MLAgents;
 using UnityEngine.EventSystems;
 
+[UpdateAfter(typeof(DeathSystem))]
 public class InputSystem : ComponentSystem
 {
 

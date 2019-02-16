@@ -35,9 +35,12 @@ public class DeathSystem : ComponentSystem
         tile.setCharacter(null);
 
       // Make the character invisible
-      foreach(Renderer r in gameObject.GetComponentsInChildren<Renderer>())
+      if(!BoardManagerSystem.instance.isTraning)
       {
-        r.enabled = false;
+        foreach (Renderer r in gameObject.GetComponentsInChildren<Renderer>())
+        {
+          r.enabled = false;
+        }
       }
 
       // Update the dead enemy counter

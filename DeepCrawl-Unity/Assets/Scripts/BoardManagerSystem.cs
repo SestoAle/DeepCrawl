@@ -162,7 +162,7 @@ public class BoardManagerSystem : MonoBehaviour
     DontDestroyOnLoad(gameObject);
 
     // Create the loot pools only once the game started
-    if(lootPools.Count <= 0)
+    if (lootPools.Count <= 0)
     {
       createLootPools();
     }
@@ -174,6 +174,8 @@ public class BoardManagerSystem : MonoBehaviour
       World.Active.GetExistingManager<ItemSystem>().Enabled = false;
       World.Active.GetExistingManager<WallBarrier>().Enabled = false;
       World.Active.GetExistingManager<ItemBarrier>().Enabled = false;
+      World.Active.GetExistingManager<LongMovementSystem>().Enabled = false;
+      World.Active.GetExistingManager<DoorSystem>().Enabled = false;
     }
   }
 
@@ -209,7 +211,7 @@ public class BoardManagerSystem : MonoBehaviour
     totalPlayers = numPlayers + numAgents;
     // Create battle board
     generateBoard();
-    if(!isTraning)
+    if (!isTraning)
     {
       deSelectAll();
       deHighlightAll();
@@ -217,8 +219,10 @@ public class BoardManagerSystem : MonoBehaviour
     // Create characters on the board
     generateCharacters();
     GameManager.instance.gameUI.resetText();
-    //if (!isTraning)
+    if (!isTraning)
       GameManager.instance.gameUI.moveCameraAtPosition(activePlayer.transform.position.x, activePlayer.transform.position.y);
+    else
+      GameManager.instance.gameUI.moveCameraAtPosition(15, 15);
   }
 
   void generateBoard()
@@ -310,7 +314,7 @@ public class BoardManagerSystem : MonoBehaviour
   // Generate both enemies and players
   void generateCharacters()
   {
-    if(!isTraning)
+    if (!isTraning)
     {
       // Instantiate the players in the starting room
       for (int player = 0; player < numPlayers; player++)
@@ -513,9 +517,9 @@ public class BoardManagerSystem : MonoBehaviour
       if (tile != null)
       {
         tile.deHighlight();
-        if(tile.isDoor)
+        if (tile.isDoor)
         {
-          foreach(Tile door in tile.getNeighbours())
+          foreach (Tile door in tile.getNeighbours())
           {
             door.deHighlight();
           }
@@ -550,7 +554,7 @@ public class BoardManagerSystem : MonoBehaviour
     leftWindowPool.destroyAllObjects();
     rightWindowPool.destroyAllObjects();
     cornerWallPool.destroyAllObjects();
-    foreach(ObjectPool lootPool in lootPools)
+    foreach (ObjectPool lootPool in lootPools)
     {
       lootPool.destroyAllObjects();
     }
@@ -580,11 +584,17 @@ public class BoardManagerSystem : MonoBehaviour
       {
         entityManager.RemoveComponent<Attack>(character.GetComponent<Character>().Entity);
       }
+      if (entityManager.HasComponent<Wait>(character.GetComponent<Character>().Entity))
+      {
+        entityManager.RemoveComponent<Wait>(character.GetComponent<Character>().Entity);
+      }
+
+
       // Remove the Death component, if there is any
       if (entityManager.HasComponent<Death>(character.GetComponent<Character>().Entity))
       {
         entityManager.RemoveComponent<Death>(character.GetComponent<Character>().Entity);
-        character.GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
+        //character.GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
       }
 
       // Remove the Done component
@@ -619,20 +629,15 @@ public class BoardManagerSystem : MonoBehaviour
         createStartInventory(character.GetComponent<Inventory>(), true);
       }
 
+      entityManager.SetComponentData(character.GetComponent<Character>().Entity,
+                                     new Turn { index = i, hasTurn = 0, hasEndedTurn = 0 });
+
       entityManager.SetComponentData(character.GetComponent<Character>().Entity, stats);
 
       // Move the character in a random position
       randomSpawn(character);
-
-      if (entityManager.GetComponentData<Turn>(character.GetComponent<Character>().Entity).hasTurn == 1)
-      {
-        if(!isTraning)
-        {
-          deHighlightAll();
-          getTileFromObject(character).highlightNeighbours();
-        }
-      }
     }
+    currentTurn = 0;
     // Restart the agent (to avoid accademy error)
     if (GameObject.Find("Enemy 1").gameObject.GetComponent<BaseAgent>())
     {
@@ -662,7 +667,7 @@ public class BoardManagerSystem : MonoBehaviour
     leftDoorPool.destroyAllObjects();
     rightDoorPool.destroyAllObjects();
     altarPool.destroyAllObjects();
-    foreach(ObjectPool lootPool in lootPools)
+    foreach (ObjectPool lootPool in lootPools)
     {
       lootPool.destroyAllObjects();
     }
@@ -726,7 +731,7 @@ public class BoardManagerSystem : MonoBehaviour
         tile.GetComponent<BoxCollider>().enabled = true;
         // Instantiate a random item
         GameObject spawnItem;
-        if(isTraning)
+        if (isTraning)
         {
           spawnItem = getRandomLoot();
         }
@@ -805,7 +810,7 @@ public class BoardManagerSystem : MonoBehaviour
 
       // Get the spawn position of the character
       Tile spawnTile = null;
-      while(spawnTile == null)
+      while (spawnTile == null)
       {
         spawnTile = getEnemySpawnPosition(room);
       }
@@ -1046,7 +1051,7 @@ public class BoardManagerSystem : MonoBehaviour
 
   private void Update()
   {
-    if(Input.GetKey(KeyCode.Space))
+    if (Input.GetKey(KeyCode.Space))
     {
       resetTraining();
     }

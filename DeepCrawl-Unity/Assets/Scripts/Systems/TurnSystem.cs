@@ -42,6 +42,7 @@ public class TurnSystem : ComponentSystem
           data.GameObjects[i].GetComponent<BaseAgent>().giveHpReward();
           // When the agent is Done, it must RequestDecision
           data.GameObjects[i].GetComponent<BaseAgent>().RequestDecision();
+          return;
         }
         // If the current Player has ended his turn or is dead or is not in the 
         // same room as the player

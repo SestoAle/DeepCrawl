@@ -332,7 +332,8 @@ gpu_options = None
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-mn', '--model-name', help="The name of the model", default="")
-parser.add_argument('-gn', '--game-name', help="The name of the environment", default=None)
+parser.add_argument('-gn', '--game-name', help="The name of the environment", default="envs/DeepCrawl-training-env")
+parser.add_argument('-ne', '--num-episodes', help="Specify the number of episodes after which the environment is restarted", default=None)
 args = parser.parse_args()
 
 
@@ -413,7 +414,7 @@ agent = PPOAgent(
 work_id = 0
 
 # Number of episodes of a single run
-num_episodes = 10
+num_episodes = args.num_episodes
 # Number of timesteps within an episode
 num_timesteps = 100
 lstm = True
@@ -493,18 +494,44 @@ def episode_finished(r):
     step += 1
     ist_step += r.episode_timestep
     reward += r.episode_rewards[-1]
-    print('Reward @ episode {}: {}'.format(step, np.mean(runner.episode_rewards[-1:])))
+    print('Reward @ episode {}: {}'.format(step, np.mean(r.episode_rewards[-1:])))
     if(step % 100 == 0):
-        print('Average cumulative reward for 100 episodes @ episode ' + str(step) + ': ' + str(np.mean(runner.episode_rewards[-100:])))
+        print('Average cumulative reward for 100 episodes @ episode ' + str(step) + ': ' + str(np.mean(r.episode_rewards[-100:])))
         print('The agent made ' + str(sum(r.episode_timesteps)) + ' steps so far')
         timer(start_time, time.time())
         reward = 0.0
+
+    # If num_episodes is not defined, save the model every 3000 episodes
+    if(num_episodes == None):
+        save = 3000
+    else:
+        save = num_episodes
+
+    if(step % save == 0):
+       save_model(r)
     return True
 
 def timer(start,end):
     hours, rem = divmod(end-start, 3600)
     minutes, seconds = divmod(rem, 60)
     print("Time passed: {:0>2}:{:0>2}:{:05.2f}".format(int(hours),int(minutes),seconds))
+
+def save_model(runner):
+    global history
+    # Save the runner statistics
+    history = {
+        "episode_rewards": runner.episode_rewards,
+        "episode_timesteps": runner.episode_timesteps,
+        "mean_entropies": runner.mean_entropies,
+        "std_entropies": runner.std_entropies
+    }
+
+    # Save the model and the runner statistics
+    runner.agent.save_model('saved/' + model_name, append_timestep=False)
+    json_str = json.dumps(history)
+    f = open("arrays/" + model_name + ".json", "w")
+    f.write(json_str)
+    f.close()
 
 try:
     while True:
@@ -527,17 +554,9 @@ try:
         # Create the runner to run the algorithm
         runner = DeepCrawlRunner(agent=agent, environment=environment, history=history, curriculum=curriculum)
 
-        # Start learning for num_episode episodes. After that, save the model, close the environment and repoen it.
+        # Start learning for num_episodes episodes. After that, save the model, close the environment and reopen it.
         # Do this to avoid memory leaks or environment errors
         runner.run(episodes=num_episodes, max_episode_timesteps=100, episode_finished=episode_finished)
-
-        # Save the runner statistics
-        history = {
-            "episode_rewards": runner.episode_rewards,
-            "episode_timesteps": runner.episode_timesteps,
-            "mean_entropies": runner.mean_entropies,
-            "std_entropies": runner.std_entropies
-        }
 
         use_model = 'y'
 
@@ -554,13 +573,6 @@ try:
         print('Net config: ' + str(agent.network))
         print('--------------')
         print('')
-
-        # Save the model and the runner statistics
-        runner.agent.save_model('saved/' + model_name, append_timestep=False)
-        json_str = json.dumps(history)
-        f = open("arrays/" + model_name + ".json", "w")
-        f.write(json_str)
-        f.close()
 
 finally:
 
@@ -582,18 +594,8 @@ finally:
             saveName = 'Model'
     else:
         saveName = model_name
-    history = {
-        "episode_rewards": runner.episode_rewards,
-        "episode_timesteps": runner.episode_timesteps,
-        "mean_entropies": runner.mean_entropies,
-        "std_entropies": runner.std_entropies
-    }
 
-    runner.agent.save_model('saved/' + saveName, append_timestep=False)
-    json_str = json.dumps(history)
-    f = open("arrays/" + saveName + ".json", "w")
-    f.write(json_str)
-    f.close()
+    save_model(runner)
 
     # Close the runner
     runner.close()

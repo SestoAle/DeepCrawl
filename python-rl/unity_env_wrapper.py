@@ -155,14 +155,13 @@ class UnityEnvWrapper(Environment):
         self.count += 1
 
         if self.verbose:
-            print(observation)
-            print(action)
-            print(reward)
+            print('action = ' + str(action))
+            print('reward = ' + str(reward))
             print(observation['global_in'])
             print(observation['stats'])
             print(observation['local_in'])
             print(observation['local_in_two'])
-            print(self.count)
+            print('timestep = ' + str(self.count))
 
         return [observation, done, reward]
 
