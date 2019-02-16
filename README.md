@@ -57,7 +57,7 @@ and import it in the project. More information at [Unity ML-Agents](https://gith
 
 ## Usage and examples
 There are more methods to train one agent with the model described in [proposed model](#proposed-model) section:
-* for Linux system, the repository provides a built environment which can be
+* for Linux and MacOS systems, the repository provides a built environment which can be
 used to start the training without Unity Editor:
 ```bash
 python3 deepcrawl_rl.py --game-name="envs/DeepCrawl-training-env"
@@ -135,6 +135,8 @@ A copy of the presentation (italian) can be found
 
 ## License
 Licensed under the term of [MIT License](https://github.com/SestoAle/DeepCrawl/blob/master/LICENSE).
+
+
 ## References
 [1]: Volodymyr Mnih et al. *Human-level control through deep reinforcement learning*. Nature, 518(7540):529–533, 2015. 
 
