@@ -57,7 +57,7 @@ and import it in the project. More information at [Unity ML-Agents](https://gith
 
 ## Usage and examples
 There are more methods to train one agent with the model described in [proposed model](#proposed-model) section:
-* for Linux system, the repository provides a built environment which can be
+* for Linux and MacOS systems, the repository provides a built environment which can be
 used to start the training without Unity Editor:
 ```bash
 python3 deepcrawl_rl.py --game-name="envs/DeepCrawl-training-env"
