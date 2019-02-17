@@ -97,7 +97,7 @@ In this section will be described the main components of the DRL model.
 </p>
 
 
-### Algorithim
+### Algorithm
 The algorithm used in this project is Proximal Policy Optimization [[3]](#references)
 (implemented in TensorForce). To see the whole set of hyperparameters, open
 ```deepcrawl_rl.py``` file.
