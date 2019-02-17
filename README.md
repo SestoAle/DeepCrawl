@@ -7,7 +7,7 @@
 DeepCrawl is a turn-based strategy game for mobile platforms, where all the enemies 
 are trained with Deep Reinforcement Learning algorithms [[1]](#references).
 
-The game is design to be hard, yet fair: the player will have to explore the 
+The game is designed to be hard, yet fair: the player will have to explore the 
 dungeons and defeat all the guardians of the rooms, paying attention to every 
 moves the AI does!
 
@@ -31,7 +31,7 @@ Learning for turn-based strategy games".
 * [References](#references)
 
 ## Installation
-You can try the Android version of the game downloading the apk at [link](https://drive.google.com/uc?export=download&confirm=LXxR&id=1Zrbnicqz6T4ty83Eo6fHZjRPPYXrFyA9).
+You can try the Android version of the game by downloading the apk at [link](https://drive.google.com/uc?export=download&confirm=LXxR&id=1Zrbnicqz6T4ty83Eo6fHZjRPPYXrFyA9).
 
 If you want to check the game code and test the DRL algorithms, first download 
 the repository:
@@ -56,7 +56,7 @@ and import it in the project. More information at [Unity ML-Agents](https://gith
 | **Tensorforce** | tested on v0.4.3 | Yes |
 
 ## Usage and examples
-There are more methods to train one agent with the model described in [proposed model](#proposed-model) section:
+There are more than one methods to train one agent with the model described in [proposed model](#proposed-model) section:
 * for Linux and MacOS systems, the repository provides a built environment which can be
 used to start the training without Unity Editor. For Linux systems, you have to extract the game from the zip file in the 
 ```envs``` folder:
@@ -73,7 +73,7 @@ instructions on screen:
 python3 deepcrawl_rl.py 
 ```  
 
-You can specify the agent statistics modifying the curriculum json in the 
+You can specify the agent statistics by modifying the curriculum json in the 
 ```deepcrawl_rl.py``` file. For more information see [proposed model](#proposed-model).
 
 
