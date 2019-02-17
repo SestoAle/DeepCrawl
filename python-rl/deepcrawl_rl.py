@@ -432,9 +432,10 @@ curriculum = {
             'minNumLoot': [0.2,0.2,0.2,0.08,0.04],
             'maxNumLoot': [0.2,0.2,0.2,0.2,0.2],
             'numActions': [17,17,17,17,17],
-            'agentDes': [2,2,2,2,2],
-            'agentAtk': [2,2,2,2,2],
-            'agentDef': [5,5,5,5,5],
+            # Agent statistics
+            'agentDes': [3,3,3,3,3],
+            'agentAtk': [3,3,3,3,3],
+            'agentDef': [3,3,3,3,3],
         }
 }
 
@@ -509,6 +510,7 @@ def episode_finished(r):
 
     if(step % save == 0):
        save_model(r)
+
     return True
 
 def timer(start,end):
