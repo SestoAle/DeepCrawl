@@ -283,7 +283,7 @@ public class BoardManagerSystem : MonoBehaviour
       // Add to sum its spawn prob
       sum += loot.GetComponent<Item>().spawnProbability;
 
-      // If the random number is less then the sum at thispoint
+      // If the random number is less then the sum at this point
       if (r <= sum)
       {
         // Get the pool of the loot
@@ -543,6 +543,8 @@ public class BoardManagerSystem : MonoBehaviour
   {
     minNumberLoot = academy.resetParameters["minNumLoot"];
     maxNumberLoot = academy.resetParameters["maxNumLoot"];
+
+    Debug.Log(minNumberLoot + " " + maxNumberLoot);
 
     // Initialize all the pools
     tilePool.destroyAllObjects();
@@ -1046,14 +1048,6 @@ public class BoardManagerSystem : MonoBehaviour
     {
       this.tile = tile;
       this.dist = float.PositiveInfinity;
-    }
-  }
-
-  private void Update()
-  {
-    if (Input.GetKey(KeyCode.Space))
-    {
-      resetTraining();
     }
   }
 }

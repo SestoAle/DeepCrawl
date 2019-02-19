@@ -1,5 +1,15 @@
-16/02/2019 11:41:50
+19/02/2019 16:03:23
  
+Warning
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+UnityEngine.Object:DontDestroyOnLoad()
+GameManager:Awake() (at Assets/Scripts/GameManager.cs:50)
+
+Warning
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+UnityEngine.Object:DontDestroyOnLoad()
+BoardManagerSystem:Awake() (at Assets/Scripts/BoardManagerSystem.cs:162)
+
 Log
 The Agent component attached to the GameObject Training Agent(Clone) was initialized without a brain.
 UnityEngine.Debug:Log(Object)
@@ -9,4 +19,110 @@ UnityEngine.Object:Instantiate(GameObject)
 BoardManagerSystem:createCharacter(GameObject, Int32, Int32, Int32, DIRECTION) (at Assets/Scripts/BoardManagerSystem.cs:438)
 BoardManagerSystem:generateCharacters() (at Assets/Scripts/BoardManagerSystem.cs:373)
 BoardManagerSystem:Start() (at Assets/Scripts/BoardManagerSystem.cs:220)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+RogueAcademy:AcademyReset() (at Assets/Scripts/ML/RogueAcademy.cs:12)
+MLAgents.Academy:EnvironmentReset() (at Assets/ML-Agents/Scripts/Academy.cs:602)
+MLAgents.Academy:ForcedFullReset() (at Assets/ML-Agents/Scripts/Academy.cs:518)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:562)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:610)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
+
+Log
+0,2 0,2
+UnityEngine.Debug:Log(Object)
+BoardManagerSystem:resetTraining() (at Assets/Scripts/BoardManagerSystem.cs:547)
+BoardManagerSystem:Update() (at Assets/Scripts/BoardManagerSystem.cs:1058)
 

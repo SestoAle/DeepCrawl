@@ -40,7 +40,6 @@ public class WallSystem : JobComponentSystem
 
     public void Execute(int i)
     {
-      Debug.Log("Yeah");
       // Get the position of the player and the wall
       Position playerPosition = playerGroup.Position[0];
       WallPosition wallPosition = wallGroup.Position[i];
@@ -83,7 +82,6 @@ public class WallSystem : JobComponentSystem
 
   protected override JobHandle OnUpdate(JobHandle inputDeps)
   {
-
     if (BoardManagerSystem.instance.isTraning)
     {
       this.Enabled = false;
@@ -95,9 +93,7 @@ public class WallSystem : JobComponentSystem
       playerGroup = m_playerGroup,
       commandBuffer = barrier.CreateCommandBuffer()
     };
-    Debug.Log("Yeah2");
 
     return job.Schedule(m_wallGroup.Length, 64, inputDeps);
   }
-
 }

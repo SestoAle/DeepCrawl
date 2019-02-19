@@ -25,7 +25,7 @@ public class ItemSystem : JobComponentSystem
   {
     public readonly int Length;
     public ComponentDataArray<Position> Position;
-    public ComponentDataArray<Player> Player;
+    [ReadOnly] public ComponentDataArray<Player> Player;
   }
 
   [Inject] private ItemGroup m_itemGroup;
@@ -40,7 +40,6 @@ public class ItemSystem : JobComponentSystem
 
     public void Execute(int i)
     {
-      Debug.Log("Yeah3");
       if (BoardManagerSystem.instance.isTraning)
         return;
 
@@ -96,8 +95,6 @@ public class ItemSystem : JobComponentSystem
       playerGroup = m_playerGroup,
       commandBuffer = barrier.CreateCommandBuffer()
     };
-
-    Debug.Log("Yeah4");
 
     return job.Schedule(m_itemGroup.Length, 64, inputDeps);
   }

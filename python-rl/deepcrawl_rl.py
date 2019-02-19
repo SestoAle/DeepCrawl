@@ -332,8 +332,8 @@ gpu_options = None
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-mn', '--model-name', help="The name of the model", default="")
-parser.add_argument('-gn', '--game-name', help="The name of the environment", default="envs/DeepCrawl-training-env")
-parser.add_argument('-ne', '--num-episodes', help="Specify the number of episodes after which the environment is restarted", default=None)
+parser.add_argument('-gn', '--game-name', help="The name of the environment", default=None)
+parser.add_argument('-ne', '--num-episodes', help="Specify the number of episodes after which the environment is restarted", default=3000)
 args = parser.parse_args()
 
 
