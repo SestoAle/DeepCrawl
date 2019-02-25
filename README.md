@@ -23,12 +23,26 @@ Università degli Studi di Firenze, with title "DeepCrawl: Deep Reinforcement
 Learning for turn-based strategy games".
 
 #### Table of content
+* [Introduction](#introduction)
 * [Installation](#installation)
 * [Usage and examples](#usage-and-examples)
 * [Proposed model](#proposed-model)
 * [Documents](#documents)
 * [License](#license)
 * [References](#references)
+
+## Introduction
+The project aim was to create a brand new videogame using Deep Reinforcement Learning techniques for the developement 
+of the NPGs AI.
+
+In the design phase some requirements were defined, in order to build agents that must interact with the user in a videogame:
+* the agent must be **credbile** and perceived as intelligent;
+* but it needs to be **imperfect**, as play against a super-human agent could be frustrating;
+* the system must be **model-free**, that is the agent must independently derive a strategy;
+* the system must offer **variety**, the game needs more then one agent class to be enjoyable.
+
+To fulfill these requirements, we managed to design, build and implement a new RogueLike games with
+a working Deep Reinforcement Learning model.
 
 ## Installation
 You can try the Android version of the game by downloading the apk at [link](https://drive.google.com/uc?export=download&confirm=LXxR&id=1Zrbnicqz6T4ty83Eo6fHZjRPPYXrFyA9).
