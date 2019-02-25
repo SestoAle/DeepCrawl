@@ -32,14 +32,14 @@ Learning for turn-based strategy games".
 * [References](#references)
 
 ## Introduction
-The project aim was to create a brand new videogame using Deep Reinforcement Learning techniques for the developement 
-of the NPGs AI.
+The aim of the project was to create a brand new videogame using Deep Reinforcement Learning techniques for the developement 
+of AI for NPG.
 
-In the design phase some requirements were defined, in order to build agents that must interact with the user in a videogame:
+In the design phase some requirements were defined, in order to build agents that had to interact with the user in a videogame:
 * the agent must be **credbile** and perceived as intelligent;
-* but it needs to be **imperfect**, as play against a super-human agent could be frustrating;
+* but it needs to be **imperfect**, as playing against a super-human agent could be frustrating;
 * the system must be **model-free**, that is the agent must independently derive a strategy;
-* the system must offer **variety**, the game needs more then one agent class to be enjoyable.
+* the system must offer **variety**, the game needs more then one class of agent to be enjoyable.
 
 To fulfill these requirements, we managed to design, build and implement a new RogueLike games with
 a working Deep Reinforcement Learning model.
