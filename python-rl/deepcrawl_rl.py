@@ -8,8 +8,7 @@ import os
 
 import json
 
-# Load UnityEnvironment and my wrapper
-from mlagents.envs import UnityEnvironment
+
 from unity_env_wrapper import UnityEnvWrapper
 from export_graph import export_pb
 from deepcrawl_runner import DeepCrawlRunner
@@ -538,6 +537,10 @@ def save_model(runner):
 try:
     while True:
 
+        if game_name == None:
+            print("You're starting the training with Unity Editor. You can test the correct interactions between "
+                  "Unity and Tensorforce, but for a complete training you must start it with a built environment.")
+
         # Close the environment
         if environment != None:
             environment.close()
@@ -548,10 +551,10 @@ try:
             agent.restore_model(directory, model_name)
 
         # Open the environment with all the desired flags
-        environment = UnityEnvWrapper(UnityEnvironment(game_name, no_graphics=True, seed=int(time.time()),
-                                                        worker_id=work_id), with_stats=True, size_stats=11,
-                                                        size_global=10, agent_separate=False, with_class=False, with_hp=False,
-                                                        with_previous=lstm, verbose=False, manual_input=False)
+        environment = UnityEnvWrapper(game_name, no_graphics=False, seed=int(time.time()),
+                                      worker_id=work_id, with_stats=True, size_stats=11,
+                                      size_global=10, agent_separate=False, with_class=False, with_hp=False,
+                                      with_previous=lstm, verbose=False, manual_input=False)
 
         # Create the runner to run the algorithm
         runner = DeepCrawlRunner(agent=agent, environment=environment, history=history, curriculum=curriculum)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 
+[UpdateAfter(typeof(DamageSystem))]
 public class DeathSystem : ComponentSystem
 {
 
@@ -41,21 +42,23 @@ public class DeathSystem : ComponentSystem
         {
           r.enabled = false;
         }
-      }
+        // Update the dead enemy counter
+        if (data.GameObject[i].tag != "Player")
+          enemiesDead++;
 
-      // Update the dead enemy counter
-      if (data.GameObject[i].tag != "Player")
-        enemiesDead++;
-        
-      // If the player dies, show the GameOver dialouge
-      if (GameObject.FindGameObjectWithTag("GameOver") == null && !BoardManagerSystem.instance.noAnim && data.GameObject[i].tag == "Player")
-      {
-        GameManager.instance.gameUI.showGameOver(data.GameObject[i].tag == "Player");
+        // If the player dies, show the GameOver dialouge
+        if (GameObject.FindGameObjectWithTag("GameOver") == null && 
+            !BoardManagerSystem.instance.noAnim && data.GameObject[i].tag == "Player")
+        {
+          GameManager.instance.gameUI.showGameOver(data.GameObject[i].tag == "Player");
+        }
       }
     }
 
     // If all the enemies of the level are dead, show the NextLevel dialogue
-    if(GameObject.FindGameObjectWithTag("GameOver") == null && enemiesDead == BoardManagerSystem.instance.numEnemies && !BoardManagerSystem.instance.noAnim)
+    if(GameObject.FindGameObjectWithTag("GameOver") == null && 
+       enemiesDead == BoardManagerSystem.instance.numEnemies && 
+       !BoardManagerSystem.instance.isTraning)
     {
       // If level = 10, show the EndGame dialogue
       if(BoardManagerSystem.instance.level >= 10)

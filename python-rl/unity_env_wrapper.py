@@ -1,13 +1,16 @@
 from tensorforce.environments import Environment
 import numpy as np
 import math
+import signal
+import time
+# Load UnityEnvironment and my wrapper
+from mlagents.envs import UnityEnvironment
 
 class UnityEnvWrapper(Environment):
-    def __init__(self, unity_env, size_global = 8, size_two = 5, with_local = True, size_three = 3, with_stats=True, size_stats = 1,
+    def __init__(self, game_name = None, no_graphics = True, seed = None, worker_id=0, size_global = 8, size_two = 5, with_local = True, size_three = 3, with_stats=True, size_stats = 1,
                  with_previous=True, manual_input = False, config = None, curriculum = None, verbose = False, agent_separate = False, agent_stats = 6,
-                 with_class=False, with_hp = False, size_class = 3):
-        self.unity_env = unity_env
-        self.default_brain = self.unity_env.brain_names[0]
+                 with_class=False, with_hp = False, size_class = 3, double_agent = False):
+
         self.probabilities = []
         self.size_global = size_global
         self.size_two = size_two
@@ -25,6 +28,13 @@ class UnityEnvWrapper(Environment):
         self.with_class = with_class
         self.with_hp = with_hp
         self.size_class = size_class
+        self.double_agent = double_agent
+        self.game_name = game_name
+        self.no_graphics = no_graphics
+        self.seed = seed
+        self.worker_id = worker_id
+        self.unity_env = self.open_unity_environment(game_name, no_graphics, seed, worker_id)
+        self.default_brain = self.unity_env.brain_names[0]
 
     count = 0
 
@@ -142,10 +152,23 @@ class UnityEnvWrapper(Environment):
             except ValueError:
                 pass
 
-        env_info = self.unity_env.step([action])[self.default_brain]
+        env_info = None
+        signal.alarm(0)
+        while env_info == None:
+            signal.signal(signal.SIGALRM, self.handler)
+            signal.alarm(3000)
+            try:
+                env_info = self.unity_env.step([action])[self.default_brain]
+            except Exception as exc:
+                self.close()
+                self.unity_env = self.open_unity_environment(self.game_name, self.no_graphics, seed = int(time.time()),
+                                                             worker_id=self.worker_id)
+                env_info = self.unity_env.reset(train_mode=True, config=self.config)[self.default_brain]
+                print("The environment didn't respond, it was necessary to close and reopen it")
 
-        while len(env_info.vector_observations) <= 0:
-            env_info = self.unity_env.step()[self.default_brain]
+        if self.double_agent:
+            while len(env_info.vector_observations) <= 0:
+                env_info = self.unity_env.step()[self.default_brain]
 
         reward = env_info.rewards[0]
         done = env_info.local_done[0]
@@ -168,14 +191,31 @@ class UnityEnvWrapper(Environment):
     def set_config(self, config):
         self.config = config
 
+    def handler(self, signum, frame):
+        print("Timeout!")
+        raise Exception("end of time")
+
     def reset(self):
 
         self.count = 0
 
-        env_info = self.unity_env.reset(train_mode=True, config = self.config)[self.default_brain]
+        env_info = None
 
-        while len(env_info.vector_observations) <= 0:
-            env_info = self.unity_env.step()[self.default_brain]
+        while env_info == None:
+            signal.signal(signal.SIGALRM, self.handler)
+            signal.alarm(60)
+            try:
+                env_info = self.unity_env.reset(train_mode=True, config=self.config)[self.default_brain]
+            except Exception as exc:
+                self.close()
+                self.unity_env = self.open_unity_environment(self.game_name, self.no_graphics, seed=int(time.time()),
+                                                             worker_id=self.worker_id)
+                env_info = self.unity_env.reset(train_mode=True, config=self.config)[self.default_brain]
+                print("The environment didn't respond, it was necessary to close and reopen it")
+
+        if self.double_agent:
+            while len(env_info.vector_observations) <= 0:
+                env_info = self.unity_env.step()[self.default_brain]
 
         observation = self.get_input_observation(env_info)
 
@@ -189,6 +229,9 @@ class UnityEnvWrapper(Environment):
 
     def close(self):
         self.unity_env.close()
+
+    def open_unity_environment(self, game_name, no_graphics, seed, worker_id):
+        return UnityEnvironment(game_name, no_graphics=no_graphics, seed=seed, worker_id=worker_id)
 
     def add_probs(self, probs):
         self.probabilities.append(probs[0])

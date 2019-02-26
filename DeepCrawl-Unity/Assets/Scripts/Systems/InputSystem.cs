@@ -5,7 +5,7 @@ using Unity.Entities;
 using MLAgents;
 using UnityEngine.EventSystems;
 
-[UpdateAfter(typeof(DeathSystem))]
+[UpdateAfter(typeof(TurnSystem))]
 public class InputSystem : ComponentSystem
 {
 
@@ -22,7 +22,6 @@ public class InputSystem : ComponentSystem
     public SubtractiveComponent<UserInput> UserInput;
     public SubtractiveComponent<EndTurn> EndTurns;
     public SubtractiveComponent<Damage> Damage;
-    public SubtractiveComponent<Wait> Wait;
   }
 
   [Inject] private Data data;

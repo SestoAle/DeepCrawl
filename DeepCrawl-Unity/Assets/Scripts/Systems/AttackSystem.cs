@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 using Unity.Entities;
 
-
+[UpdateAfter(typeof(ActionSystem))]
 public class AttackSystem : ComponentSystem
 {
   public struct Data

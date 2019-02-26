@@ -2,6 +2,7 @@
 using System.Collections;
 using Unity.Entities;
 
+
 public class EndTurnSystem : ComponentSystem
 {
   public struct Data
@@ -13,6 +14,7 @@ public class EndTurnSystem : ComponentSystem
     public ComponentDataArray<Turn> Turns;
 
     public SubtractiveComponent<Damage> Damages;
+    public SubtractiveComponent<DoneComponent> Done;
   }
 
   [Inject] private Data data;

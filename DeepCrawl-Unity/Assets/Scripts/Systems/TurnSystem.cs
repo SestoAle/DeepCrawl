@@ -18,6 +18,7 @@ public class TurnSystem : ComponentSystem
     public SubtractiveComponent<UserInput> UserInput;
     public SubtractiveComponent<EndTurn> EndTurns;
     public SubtractiveComponent<Damage> Damage;
+    public SubtractiveComponent<DoneComponent> Done;
   }
 
   [Inject] private Data data;
@@ -36,7 +37,9 @@ public class TurnSystem : ComponentSystem
       // If the turn component has the currentIndex
       if (turn.index == BoardManagerSystem.instance.currentTurn)
       {
-        if (EntityManager.HasComponent(data.Entity[i], typeof(Death)) && data.GameObjects[i].GetComponent<BaseAgent>() != null && BoardManagerSystem.instance.isTraning)
+        if (EntityManager.HasComponent(data.Entity[i], typeof(Death)) && 
+            data.GameObjects[i].GetComponent<BaseAgent>() != null && 
+            BoardManagerSystem.instance.isTraning)
         {
           // Give the reward base on the hp lost in this turn
           data.GameObjects[i].GetComponent<BaseAgent>().giveHpReward();
@@ -48,7 +51,8 @@ public class TurnSystem : ComponentSystem
         // same room as the player
         if (turn.hasEndedTurn == 1 || EntityManager.HasComponent(entity, typeof(Death)) 
             || data.GameObjects[i].tag == "Puppet" || 
-            (tile.parent.getId() != BoardManagerSystem.instance.currentRoomId && !BoardManagerSystem.instance.noAnim))
+            (tile.parent.getId() != BoardManagerSystem.instance.currentRoomId && 
+             !BoardManagerSystem.instance.noAnim))
         {
           // Update the current player turn component
           turn.hasTurn = 0;

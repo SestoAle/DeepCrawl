@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 
+[UpdateAfter(typeof(ActionSystem))]
 public class MovementSystem : ComponentSystem
 {
 
@@ -53,10 +54,9 @@ public class MovementSystem : ComponentSystem
       else
       {
         data.Transforms[i].position = Vector3.Lerp(data.Transforms[i].position, newPos, characterSpeed * dt);
+        // Start run animation
+        data.Animators[i].SetBool("isMoving", true);
       }
-
-      // Start run animation
-      data.Animators[i].SetBool("isMoving", true);
 
       // When the movement is complete
       if (Vector3.Distance(data.Transforms[i].position, newPos) < 0.1)

@@ -5,7 +5,7 @@ using Unity.Entities;
 using Unity.Jobs;
 using System.Linq;
 
-[UpdateAfter(typeof(TurnSystem))]
+[UpdateAfter(typeof(InputSystem))]
 public class ActionSystem : ComponentSystem
 {
 

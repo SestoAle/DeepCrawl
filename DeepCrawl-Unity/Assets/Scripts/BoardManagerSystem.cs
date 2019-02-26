@@ -429,6 +429,7 @@ public class BoardManagerSystem : MonoBehaviour
 
     character.transform.position = new Vector3(x, 0, y);
     getTileFromObject(character).setCharacter(character);
+    entityManager.SetComponentData(character.GetComponent<Character>().Entity, new Position { x = x, y = y });
   }
 
   // Instatiate character object
@@ -544,8 +545,6 @@ public class BoardManagerSystem : MonoBehaviour
     minNumberLoot = academy.resetParameters["minNumLoot"];
     maxNumberLoot = academy.resetParameters["maxNumLoot"];
 
-    Debug.Log(minNumberLoot + " " + maxNumberLoot);
-
     // Initialize all the pools
     tilePool.destroyAllObjects();
     tileDirtPool.destroyAllObjects();
@@ -568,7 +567,7 @@ public class BoardManagerSystem : MonoBehaviour
     if (!noAnim)
       GameManager.instance.gameUI.resetText();
 
-    //resetCharacters;
+    // Reset characters;
     for (int i = 0; i < numAgents; i++)
     {
       GameObject character = GameObject.Find("Enemy " + (i + 1)).gameObject;
@@ -590,19 +589,32 @@ public class BoardManagerSystem : MonoBehaviour
       {
         entityManager.RemoveComponent<Wait>(character.GetComponent<Character>().Entity);
       }
-
+      if (entityManager.HasComponent<Damage>(character.GetComponent<Character>().Entity))
+      {
+        entityManager.RemoveComponent<Damage>(character.GetComponent<Character>().Entity);
+      }
+      if (entityManager.HasComponent<EndTurn>(character.GetComponent<Character>().Entity))
+      {
+        entityManager.RemoveComponent<EndTurn>(character.GetComponent<Character>().Entity);
+      }
+      if (entityManager.HasComponent<PopupComponent>(character.GetComponent<Character>().Entity))
+      {
+        entityManager.RemoveComponent<PopupComponent>(character.GetComponent<Character>().Entity);
+      }
+      if (entityManager.HasComponent<Buff>(character.GetComponent<Character>().Entity))
+      {
+        entityManager.RemoveComponent<Buff>(character.GetComponent<Character>().Entity);
+      }
+      if (entityManager.HasComponent<DoneComponent>(character.GetComponent<Character>().Entity))
+      {
+        entityManager.RemoveComponent<DoneComponent>(character.GetComponent<Character>().Entity);
+      }
 
       // Remove the Death component, if there is any
       if (entityManager.HasComponent<Death>(character.GetComponent<Character>().Entity))
       {
         entityManager.RemoveComponent<Death>(character.GetComponent<Character>().Entity);
         //character.GetComponentInChildren<SkinnedMeshRenderer>().enabled = true;
-      }
-
-      // Remove the Done component
-      if (entityManager.HasComponent<DoneComponent>(character.GetComponent<Character>().Entity))
-      {
-        entityManager.RemoveComponent<DoneComponent>(character.GetComponent<Character>().Entity);
       }
 
       Stats stats;
@@ -629,6 +641,7 @@ public class BoardManagerSystem : MonoBehaviour
         stats = new Stats { hp = actualHp, atk = 3, def = 3, des = 3, maxHp = 20 };
         // Create a random inventory
         createStartInventory(character.GetComponent<Inventory>(), true);
+        //entityManager.SetComponentData(character.GetComponent<Character>().Entity, new Player { });
       }
 
       entityManager.SetComponentData(character.GetComponent<Character>().Entity,
@@ -644,6 +657,25 @@ public class BoardManagerSystem : MonoBehaviour
     if (GameObject.Find("Enemy 1").gameObject.GetComponent<BaseAgent>())
     {
       GameObject.Find("Enemy 1").gameObject.gameObject.GetComponent<BaseAgent>().AgentRestart();
+    }
+
+    // Set the target to each character
+    GameObject.Find("Enemy 1").GetComponent<Character>().target = GameObject.Find("Enemy 2");
+    GameObject.Find("Enemy 2").GetComponent<Character>().target = GameObject.Find("Enemy 1");
+
+    if (player)
+      GameObject.Find("Enemy 2").tag = "Player";
+    else
+      GameObject.Find("Enemy 2").tag = "Random";
+
+    GameObject.Find("Enemy 1").tag = "BrainedAgent";
+
+    GameObject.Find("Enemy 1").GetComponent<Agent>().GiveBrain(trainBrain);
+
+    // Use this for agent vs agent
+    if (doubleAgent)
+    {
+      GameObject.Find("Enemy 2").GetComponent<Agent>().GiveBrain(doubleAgentBrain);
     }
   }
 
@@ -735,7 +767,7 @@ public class BoardManagerSystem : MonoBehaviour
         GameObject spawnItem;
         if (isTraning)
         {
-          spawnItem = getRandomLoot();
+          spawnItem = getRandomLootWithProb();
         }
         else
         {

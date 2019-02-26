@@ -20,6 +20,11 @@ public class PinchSystem : ComponentSystem
 
   protected override void OnUpdate()
   {
+    if(BoardManagerSystem.instance.isTraning)
+    {
+      return;
+    }
+
     // Get the camera
     Camera camera = Camera.main;
 

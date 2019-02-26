@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Entities;
 
+[UpdateAfter(typeof(ActionSystem))]
 public class DamageSystem : ComponentSystem
 {
 
