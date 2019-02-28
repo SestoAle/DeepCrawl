@@ -3984,7 +3984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000020323065, y: 0.0000011816411}
+  m_AnchoredPosition: {x: 0.000020323065, y: -0.0000064663795}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &898461657
@@ -4035,6 +4035,7 @@ GameObject:
   - component: {fileID: 900870517}
   - component: {fileID: 900870519}
   - component: {fileID: 900870518}
+  - component: {fileID: 900870520}
   m_Layer: 5
   m_Name: Footer
   m_TagString: Untagged
@@ -4100,6 +4101,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900870516}
   m_CullTransparentMesh: 0
+--- !u!114 &900870520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900870516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f6692e9ccf974189bc5e56cc307d72e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &908412279
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,6 +4204,17 @@ MonoBehaviour:
   - {fileID: 297046235}
   - {fileID: 585933701}
   - {fileID: 1491301540}
+  - {fileID: 848040820}
+  - {fileID: 1577927217}
+  - {fileID: 1615505119}
+  - {fileID: 214010794}
+  - {fileID: 1539468911}
+  - {fileID: 924436811}
+  - {fileID: 270445493}
+  - {fileID: 1083950559}
+  - {fileID: 514470601}
+  - {fileID: 848040820}
+  - {fileID: 1655271326}
   maxLine: 7
   textLines: []
   hasToUptade: 0
