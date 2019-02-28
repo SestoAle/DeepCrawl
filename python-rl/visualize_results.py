@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument('-mn', '--model-name', help="The name of the model", default=None)
 parser.add_argument('-nm', '--num-mean', help="The number of the episode to compute the mean", default=1000)
-parser.add_argument('-sp', '--save-plot', help="if true save the plot in folder saved_plot", default=True)
+parser.add_argument('-sp', '--save-plot', help="if true save the plot in folder saved_plot", default=False)
 args = parser.parse_args()
 
 model_name = args.model_name
@@ -63,6 +63,7 @@ if waste != 0:
     plt.ylabel("Rate di Successo")
     if save_plot:
         plt.savefig("saved_plots/" + model_name + "_success.png", dpi=300)
+    plt.show()
 
 else:
     print('Max reward: ' + str(np.max(np.mean(episodes_reward.reshape(-1, num_mean), axis=1))))
@@ -91,6 +92,7 @@ else:
     plt.ylabel("Rate di Successo")
     if save_plot:
         plt.savefig("saved_plots/" + model_name + "_success.png", dpi=300)
+    plt.show()
 
 print("Number of timesteps: " + str(np.sum(timesteps)))
 print("Number of episodes: " + str(np.size(episodes_reward)))

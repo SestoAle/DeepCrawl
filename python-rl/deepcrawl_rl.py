@@ -404,6 +404,7 @@ agent = PPOAgent(
     execution=dict(
         type='single',
         session_config = None,
+        #session_config = tf.ConfigProto(gpu_options=gpu_options),
         distributed_spec=None
     )
 )
@@ -551,7 +552,7 @@ try:
             agent.restore_model(directory, model_name)
 
         # Open the environment with all the desired flags
-        environment = UnityEnvWrapper(game_name, no_graphics=False, seed=int(time.time()),
+        environment = UnityEnvWrapper(game_name, no_graphics=True, seed=int(time.time()),
                                       worker_id=work_id, with_stats=True, size_stats=11,
                                       size_global=10, agent_separate=False, with_class=False, with_hp=False,
                                       with_previous=lstm, verbose=False, manual_input=False)
