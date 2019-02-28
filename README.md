@@ -45,7 +45,7 @@ To fulfill these requirements, we managed to design, build and implement a new R
 a working Deep Reinforcement Learning model.
 
 ## Installation
-You can try the Android version of the game by downloading the apk at [link](https://drive.google.com/uc?export=download&confirm=LXxR&id=1Zrbnicqz6T4ty83Eo6fHZjRPPYXrFyA9).
+You can try the Android version of the game by downloading the apk at [link](https://drive.google.com/open?id=1qLDi_K-tPAIF2UdaA2F6CM7FtoJGXZ0Y).
 
 If you want to check the game code and test the DRL algorithms, first download 
 the repository:
