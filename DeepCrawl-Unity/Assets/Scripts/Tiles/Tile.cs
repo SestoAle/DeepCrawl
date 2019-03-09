@@ -337,4 +337,25 @@ public class Tile : MonoBehaviour
       deHighlight();
     }
   }
+
+  public bool canMoveFromHere()
+  {
+    int count = 0;
+    foreach(Tile n in neighbours)
+    {
+      if(n.canMove() || n.hasCharacter())
+      {
+        break;
+      }
+      else
+      {
+        count++;
+      }
+    }
+    if(count >= neighbours.Count)
+    {
+      return false;
+    }
+    return true;
+  }
 }

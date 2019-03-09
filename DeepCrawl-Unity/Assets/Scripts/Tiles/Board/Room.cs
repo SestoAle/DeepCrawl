@@ -244,7 +244,7 @@ public class Room
       // Instantiate the tile and the objects
       instantiateTiles();
       // Instantiate the wall of the room
-      if(!BoardManagerSystem.instance.isTraning)
+      if (!BoardManagerSystem.instance.isTraning)
         instantiateRoomWall();
 
       // If is the starting room and is not level 1, add the altar
@@ -882,11 +882,11 @@ public class Room
         int tile = tileMap[x, y];
         if (tile == 3)
         {
-          if (tileMap[x + 1, y - 1] < 0 || tileMap[x, y - 1] < 0 || tileMap[x - 1, y - 1] < 0 ||
-             tileMap[x + 1, y - 1] == 3 || tileMap[x, y - 1] == 3 || tileMap[x - 1, y - 1] == 3 ||
-              tileMap[x + 1, y - 1] == 0 || tileMap[x, y - 1] == 0 || tileMap[x - 1, y - 1] == 0)
+
+          if (tileMap[x + 1, y - 1] <= 0 || tileMap[x, y - 1] <= 0 || tileMap[x - 1, y - 1] <= 0 ||
+              tileMap[x + 1, y - 1] == 3 || tileMap[x, y - 1] == 3 || tileMap[x - 1, y - 1] == 3)
           {
-            if (tileMap[x, y + 1] == 3 || tileMap[x, y + 1] < 0 || tileMap[x, y + 1] == 0)
+            if (tileMap[x, y + 1] == 3 || tileMap[x, y + 1] <= 0)
             {
               tileMap[x, y] = 1;
             }
@@ -900,11 +900,11 @@ public class Room
         int tile = tileMap[x, y];
         if (tile == 3)
         {
-          if (tileMap[x + 1, y - 1] < 0 || tileMap[x + 1, y] < 0 || tileMap[x + 1, y + 1] < 0 ||
-             tileMap[x + 1, y - 1] == 3 || tileMap[x + 1, y] == 3 || tileMap[x + 1, y + 1] == 3 ||
-              tileMap[x + 1, y - 1] == 0 || tileMap[x + 1, y] == 0 || tileMap[x + 1, y + 1] == 0)
+          if (tileMap[x + 1, y - 1] <= 0 || tileMap[x + 1, y] <= 0 || tileMap[x + 1, y + 1] <= 0 ||
+              tileMap[x + 1, y - 1] == 3 || tileMap[x + 1, y] == 3 || tileMap[x + 1, y + 1] == 3)
+
           {
-            if (tileMap[x - 1, y] == 3 || tileMap[x - 1, y] == 0 || tileMap[x - 1, y] < 0)
+            if (tileMap[x - 1, y] == 3 || tileMap[x - 1, y] <= 0)
             {
               tileMap[x, y] = 1;
             }

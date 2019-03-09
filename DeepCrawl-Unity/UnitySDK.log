@@ -1,5 +1,10 @@
-03/03/2019 11:59:19
+08/03/2019 13:58:33
  
+Warning
+DontDestroyOnLoad only work for root GameObjects or components on root GameObjects.
+UnityEngine.Object:DontDestroyOnLoad()
+BoardManagerSystem:Awake() (at Assets/Scripts/BoardManagerSystem.cs:162)
+
 Log
 The Agent component attached to the GameObject Training Agent(Clone) was initialized without a brain.
 UnityEngine.Debug:Log(Object)
@@ -9,4 +14,14 @@ UnityEngine.Object:Instantiate(GameObject)
 BoardManagerSystem:createCharacter(GameObject, Int32, Int32, Int32, DIRECTION) (at Assets/Scripts/BoardManagerSystem.cs:439)
 BoardManagerSystem:generateCharacters() (at Assets/Scripts/BoardManagerSystem.cs:373)
 BoardManagerSystem:Start() (at Assets/Scripts/BoardManagerSystem.cs:220)
+
+Exception
+NullReferenceException: Object reference not set to an instance of an object
+BoardManagerSystem.randomSpawn (UnityEngine.GameObject character) (at Assets/Scripts/BoardManagerSystem.cs:428)
+BoardManagerSystem.resetTraining () (at Assets/Scripts/BoardManagerSystem.cs:653)
+RogueAcademy.AcademyReset () (at Assets/Scripts/ML/RogueAcademy.cs:12)
+MLAgents.Academy.EnvironmentReset () (at Assets/ML-Agents/Scripts/Academy.cs:602)
+MLAgents.Academy.ForcedFullReset () (at Assets/ML-Agents/Scripts/Academy.cs:518)
+MLAgents.Academy.EnvironmentStep () (at Assets/ML-Agents/Scripts/Academy.cs:546)
+MLAgents.Academy.FixedUpdate () (at Assets/ML-Agents/Scripts/Academy.cs:610)
 

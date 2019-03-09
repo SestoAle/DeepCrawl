@@ -414,8 +414,8 @@ public class BoardManagerSystem : MonoBehaviour
     int y = Random.Range(startRoomCoords[1], startRoomCoords[1] + startRoom.getSize());
     Tile t = getTile(x, y);
 
-    // Get a new random tile if the previous was occupied
-    while (t == null || !t.canMove() || t.hasItem())
+    // Get a new random tile if the previous was occupied or can't move from there
+    while (t == null || !t.canMove() || t.hasItem() || !t.canMoveFromHere())
     {
       x = Random.Range(startRoomCoords[0], startRoomCoords[0] + startRoom.getSize());
       y = Random.Range(startRoomCoords[1], startRoomCoords[1] + startRoom.getSize());
@@ -423,12 +423,8 @@ public class BoardManagerSystem : MonoBehaviour
       t = getTile(x, y);
     }
 
-    // Move the character to the random position
-    if (getTileFromObject(character) != null)
-      getTileFromObject(character).setCharacter(null);
-
     character.transform.position = new Vector3(x, 0, y);
-    getTileFromObject(character).setCharacter(character);
+    t.setCharacter(character);
     entityManager.SetComponentData(character.GetComponent<Character>().Entity, new Position { x = x, y = y });
   }
 
@@ -560,12 +556,20 @@ public class BoardManagerSystem : MonoBehaviour
       lootPool.destroyAllObjects();
     }
 
+    foreach(Tile t in board.getTiles())
+    {
+      if(t != null)
+        t.setCharacter(null);
+    }
+
     // Generate a new board
     generateBoard();
 
     // Reset UI
     if (!noAnim)
       GameManager.instance.gameUI.resetText();
+
+
 
     // Reset characters;
     for (int i = 0; i < numAgents; i++)
@@ -652,25 +656,14 @@ public class BoardManagerSystem : MonoBehaviour
       // Move the character in a random position
       randomSpawn(character);
     }
+
     currentTurn = 0;
+
     // Restart the agent (to avoid accademy error)
     if (GameObject.Find("Enemy 1").gameObject.GetComponent<BaseAgent>())
     {
       GameObject.Find("Enemy 1").gameObject.gameObject.GetComponent<BaseAgent>().AgentRestart();
     }
-
-    // Set the target to each character
-    GameObject.Find("Enemy 1").GetComponent<Character>().target = GameObject.Find("Enemy 2");
-    GameObject.Find("Enemy 2").GetComponent<Character>().target = GameObject.Find("Enemy 1");
-
-    if (player)
-      GameObject.Find("Enemy 2").tag = "Player";
-    else
-      GameObject.Find("Enemy 2").tag = "Random";
-
-    GameObject.Find("Enemy 1").tag = "BrainedAgent";
-
-    GameObject.Find("Enemy 1").GetComponent<Agent>().GiveBrain(trainBrain);
 
     // Use this for agent vs agent
     if (doubleAgent)

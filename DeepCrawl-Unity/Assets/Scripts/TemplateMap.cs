@@ -203,6 +203,7 @@ public static class TemplateMap
   // Generate the start room
   public static int[,] generateStartingRoom()
   {
+    //return templates[0];
     return matrixSum(templates[0], holeTemplates[3]);
   }
 
