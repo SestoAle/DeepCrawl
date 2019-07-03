@@ -33,7 +33,7 @@ Learning for turn-based strategy games".
 
 ## Introduction
 The aim of the project was to create a brand new videogame using Deep Reinforcement Learning techniques for the developement 
-of AI for NPG.
+of AI for NPC.
 
 In the design phase some requirements were defined, in order to build agents that had to interact with the user in a videogame:
 * the agent must be **credbile** and perceived as intelligent;
