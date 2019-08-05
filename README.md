@@ -156,7 +156,7 @@ Licensed under the term of [MIT License](https://github.com/SestoAle/DeepCrawl/b
 ## References
 [1]: Volodymyr Mnih et al. *Human-level control through deep reinforcement learning*. Nature, 518(7540):529–533, 2015. 
 
-[2]: Alexander Kuhnle et al. *Tensorforce: a tensorflow library for applied reinforcement learning*. Web page, 2017
+[2]: Alexander Kuhnle et al. *Tensorforce: a tensorflow library for applied reinforcement learning*. Web page, 2017.
 
 [3]: John Schulman et al. *Proximal policy optimization algorithms*. CoRR, abs/1707.06347, 2017. 
 
