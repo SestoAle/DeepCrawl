@@ -152,6 +152,17 @@ A copy of the presentation (italian) can be found
 ## License
 Licensed under the term of [MIT License](https://github.com/SestoAle/DeepCrawl/blob/master/LICENSE).
 
+## Cite DeepCrawl
+Please cite DeepCrawl as follows:
+```
+@InProceedings{sesto19,
+  title = 	 {DeepCrawl: Deep Reinforcement Learning for Turn Based Strategy Games},
+  author = 	 {Alessandro Sestini and Alexander Kuhnle and Andrew D. Bagdanov},
+  booktitle = 	 {Proceedings of AIIDE Workshop on Experimental AI in Games},
+  year = 	 {2019},
+  abstract = 	 {In this paper we introduce DeepCrawl, a fully-playable Roguelike prototype for iOS and Android in which all agents are controlled by policy networks trained using Deep Reinforcement Learning (DRL). Our aim is to understand whether recent advances in DRL can be used to develop convincing behavioral models for non-player characters in videogames. We begin with an analysis of requirements that such an AI system should satisfy in order to be practically applicable in video game development, and identify the elements of the DRL model used in the DeepCrawl prototype. The successes and limitations of DeepCrawl are documented through a series of playability tests performed on the final game. We believe that the techniques we propose offer insight into innovative new avenues for the development of behaviors for non-player characters in video games, as they offer the potential to overcome critical issues with classical approaches.}
+}
+```
 
 ## References
 [1]: Volodymyr Mnih et al. *Human-level control through deep reinforcement learning*. Nature, 518(7540):529–533, 2015. 
