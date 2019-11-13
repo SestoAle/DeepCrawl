@@ -3,6 +3,8 @@ import numpy as np
 import math
 import signal
 import time
+import logging
+
 # Load UnityEnvironment and my wrapper
 from mlagents.envs import UnityEnvironment
 
@@ -35,6 +37,7 @@ class UnityEnvWrapper(Environment):
         self.worker_id = worker_id
         self.unity_env = self.open_unity_environment(game_name, no_graphics, seed, worker_id)
         self.default_brain = self.unity_env.brain_names[0]
+        self.global_timesteps = 0
 
     count = 0
 
@@ -148,9 +151,12 @@ class UnityEnvWrapper(Environment):
             input_action = input('...')
 
             try:
-                action = int(input_action)
+                action = input_action
             except ValueError:
                 pass
+
+        if isinstance(action, str):
+            action = self.command_to_action(action)
 
         env_info = None
         signal.alarm(0)
@@ -177,6 +183,9 @@ class UnityEnvWrapper(Environment):
 
         self.count += 1
 
+        # Update global timesteps
+        self.global_timesteps += 1
+
         if self.verbose:
             print('action = ' + str(action))
             print('reward = ' + str(reward))
@@ -187,6 +196,21 @@ class UnityEnvWrapper(Environment):
             print('timestep = ' + str(self.count))
 
         return [observation, done, reward]
+
+    def command_to_action(self, command):
+
+        switcher = {
+            "w": 0,
+            "d": 1,
+            "x": 2,
+            "a": 3,
+            "e": 4,
+            "c": 5,
+            "z": 6,
+            "q": 7
+        }
+
+        return switcher.get(command, 99)
 
     def set_config(self, config):
         self.config = config
@@ -205,6 +229,7 @@ class UnityEnvWrapper(Environment):
             signal.signal(signal.SIGALRM, self.handler)
             signal.alarm(60)
             try:
+                logging.getLogger("mlagents.envs").setLevel(logging.WARNING)
                 env_info = self.unity_env.reset(train_mode=True, config=self.config)[self.default_brain]
             except Exception as exc:
                 self.close()

@@ -12,9 +12,12 @@ import json
 from unity_env_wrapper import UnityEnvWrapper
 from export_graph import export_pb
 from deepcrawl_runner import DeepCrawlRunner
+from reward_model.reward_model import RewardModel
 
 import tensorflow as tf
 import argparse
+
+from torchsummary import summary
 
 import datetime
 
@@ -324,21 +327,24 @@ baseline = [
 #gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.35)
 gpu_options = None
 
-'''---------'''
-'''Arguments'''
-'''---------'''
+'''--------------------------'''
+'''         Arguments        '''
+'''--------------------------'''
 
 parser = argparse.ArgumentParser()
 
 parser.add_argument('-mn', '--model-name', help="The name of the model", default="")
-parser.add_argument('-gn', '--game-name', help="The name of the environment", default=None)
+parser.add_argument('-gn', '--game-name', help="The name of the environment", default="envs/DeepCrawl-guided-learning-3")
+# TODO: delete this
+# parser.add_argument('-gn', '--game-name', help="The name of the environment", default=None)
 parser.add_argument('-ne', '--num-episodes', help="Specify the number of episodes after which the environment is restarted", default=3000)
+parser.add_argument('-wk', '--worker-id', help="The id for the worker", default=1)
 args = parser.parse_args()
 
 
-'''--------------------'''
-'''Algorithm Parameters'''
-'''--------------------'''
+'''--------------------------'''
+'''   Algorithm parameters   '''
+'''--------------------------'''
 
 # Create a Proximal Policy Optimization agent
 agent = PPOAgent(
@@ -353,7 +359,7 @@ agent = PPOAgent(
     # Actions structure
     actions={
         'type': 'int',
-        'num_actions': 17
+        'num_actions': 8
     },
     network=net,
     # Agent
@@ -363,9 +369,9 @@ agent = PPOAgent(
     update_mode=dict(
         unit='episodes',
         # 10 episodes per update
-        batch_size=10,
+        batch_size=1,
         # Every 10 episodes
-        frequency=10
+        frequency=1
     ),
     memory=dict(
         type='latest',
@@ -411,7 +417,7 @@ agent = PPOAgent(
 
 # Work ID of the environment. To use the unity editor, the ID must be 0. To use more environments in parallel, use
 # different ids
-work_id = 0
+work_id = args.worker_id
 
 # Number of episodes of a single run
 num_episodes = args.num_episodes
@@ -426,16 +432,16 @@ curriculum = {
     'parameters':
         {
             'minTargetHp': [1,10,10,10,10],
-            'maxTargetHp': [1,10,20,20,20],
             'minAgentHp': [5,5,5,5,5],
-            'maxAgentHp': [20,20,20,20,20],
-            'minNumLoot': [0.2,0.2,0.2,0.08,0.04],
-            'maxNumLoot': [0.2,0.2,0.2,0.2,0.2],
             'numActions': [17,17,17,17,17],
+            'maxTargetHp': [1,10,20,20,20],
+            'maxAgentHp': [20,20,20,20,20],
+            'maxNumLoot': [0.2,0.2,0.2,0.2,0.2],
+            'minNumLoot': [0.2,0.2,0.2,0.08,0.04],
             # Agent statistics
-            'agentDes': [3,3,3,3,3],
             'agentAtk': [3,3,3,3,3],
             'agentDef': [3,3,3,3,3],
+            'agentDes': [3,3,3,3,3]
         }
 }
 
@@ -444,9 +450,9 @@ model_name = args.model_name
 # Name of the enviroment to load. To use Unity Editor, must be None
 game_name = args.game_name
 
-'''-----------------'''
-'''Run the algorithm'''
-'''-----------------'''
+'''--------------------------'''
+'''     Run the algorithm    '''
+'''--------------------------'''
 
 use_model = None
 
@@ -487,7 +493,7 @@ start_time = time.time()
 environment = None
 
 # Callback function printing episode statistics
-def episode_finished(r):
+def episode_finished(r, worker_id, num_callback_episodes = 10):
     global step
     global reward
     global ist_step
@@ -495,9 +501,13 @@ def episode_finished(r):
     step += 1
     ist_step += r.episode_timestep
     reward += r.episode_rewards[-1]
-    print('Reward @ episode {}: {}'.format(step, np.mean(r.episode_rewards[-1:])))
-    if(step % 100 == 0):
-        print('Average cumulative reward for 100 episodes @ episode ' + str(step) + ': ' + str(np.mean(r.episode_rewards[-100:])))
+    # print('Reward @ episode {}: {}'.format(step, np.mean(r.episode_rewards[-1:])))
+    if((step % num_callback_episodes) == 0):
+        print('Average cumulative estimated reward for ' + str(num_callback_episodes) + ' episodes @ episode ' + str(step) + ': ' + str(np.mean(r.episode_rewards[-num_callback_episodes:])))
+        print('Average cumulative real reward for ' + str(num_callback_episodes) + ' episodes @ episode ' + str(step) + ': ' + str(np.mean(r.real_episode_rewards[-num_callback_episodes:])))
+        if r.reward_model is not None:
+            print('Reward Model Loss @ episode {}: {}'.format(step, np.mean(r.reward_model_loss[-num_callback_episodes:])))
+            print('Reward Model Validation Loss @ episode {}: {}'.format(step, np.mean(r.reward_model_val_loss[-num_callback_episodes:])))
         print('The agent made ' + str(sum(r.episode_timesteps)) + ' steps so far')
         timer(start_time, time.time())
         reward = 0.0
@@ -523,9 +533,10 @@ def save_model(runner):
     # Save the runner statistics
     history = {
         "episode_rewards": runner.episode_rewards,
+        "real_episode_rewards": runner.real_episode_rewards,
         "episode_timesteps": runner.episode_timesteps,
         "mean_entropies": runner.mean_entropies,
-        "std_entropies": runner.std_entropies
+        "std_entropies": runner.std_entropies,
     }
 
     # Save the model and the runner statistics
@@ -552,13 +563,20 @@ try:
             agent.restore_model(directory, model_name)
 
         # Open the environment with all the desired flags
-        environment = UnityEnvWrapper(game_name, no_graphics=True, seed=int(time.time()),
+        environment = UnityEnvWrapper(game_name, no_graphics=False, seed=int(time.time()),
                                       worker_id=work_id, with_stats=True, size_stats=11,
                                       size_global=10, agent_separate=False, with_class=False, with_hp=False,
                                       with_previous=lstm, verbose=False, manual_input=False)
 
+        '''--------------------------'''
+        '''       Reward Model       '''
+        '''--------------------------'''
+        GAN_reward = RewardModel(obs_size=12, inner_size=10, actions_size=17, policy=agent)
+
+
+
         # Create the runner to run the algorithm
-        runner = DeepCrawlRunner(agent=agent, environment=environment, history=history, curriculum=curriculum)
+        runner = DeepCrawlRunner(agent=agent, environment=environment, history=history, curriculum=curriculum, reward_model=GAN_reward)
 
         # Start learning for num_episodes episodes. After that, save the model, close the environment and reopen it.
         # Do this to avoid memory leaks or environment errors
@@ -582,14 +600,19 @@ try:
 
 finally:
 
-    '''--------------'''
-    '''End of the run'''
-    '''--------------'''
+    '''--------------------------'''
+    '''      End of the run      '''
+    '''--------------------------'''
 
     print("Learning finished. Total episodes: {ep}. Average reward of last 100 episodes: {ar}.".format(
         ep=runner.episode,
         ar=np.mean(runner.episode_rewards[-100:]))
     )
+
+    '''--------------------------'''
+    '''     Try reward model     '''
+    '''--------------------------'''
+    GAN_reward.create_demonstrations(environment, inference = True, save_demonstrations = False)
 
     # Save the model and the runner statistics
     if model_name == "" or model_name == " " or model_name == None:

@@ -6,54 +6,54 @@ using UnityEngine.UI;
 
 public class PinchSystem : ComponentSystem
 {
-  public struct Data
-  {
-    public readonly int Length;
-    public EntityArray Entity;
-    public GameObjectArray GameObjects;
-  }
-
-  [Inject] private Data data;
-
-  public float orthoZoomSpeed = 0.01f;
-  public float orthoZoomSpeedWheel = 2f;
-
-  protected override void OnUpdate()
-  {
-    if(BoardManagerSystem.instance.isTraning)
+    public struct Data
     {
-      return;
+        public readonly int Length;
+        public EntityArray Entity;
+        public GameObjectArray GameObjects;
     }
 
-    // Get the camera
-    Camera camera = Camera.main;
+    [Inject] private Data data;
 
-    // If touch count is 2
-    if (Input.touchCount == 2)
+    public float orthoZoomSpeed = 0.01f;
+    public float orthoZoomSpeedWheel = 2f;
+
+    protected override void OnUpdate()
     {
-      // Get the first and second touch
-      Touch touchZero = Input.GetTouch(0);
-      Touch touchOne = Input.GetTouch(1);
+        if (BoardManagerSystem.instance.isTraning)
+        {
+            return;
+        }
 
-      Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
-      Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+        // Get the camera
+        Camera camera = Camera.main;
 
-      float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
-      float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+        // If touch count is 2
+        if (Input.touchCount == 2)
+        {
+            // Get the first and second touch
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
 
-      float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
 
-      // Change the otrhographic size depending on the pinch
-      camera.orthographicSize += deltaMagnitudeDiff * orthoZoomSpeed;
+            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
 
-      // Clamp the size between min and max values
-      camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 3.0f, 8.0f);
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+            // Change the otrhographic size depending on the pinch
+            camera.orthographicSize += deltaMagnitudeDiff * orthoZoomSpeed;
+
+            // Clamp the size between min and max values
+            camera.orthographicSize = Mathf.Clamp(camera.orthographicSize, 3.0f, 8.0f);
+        }
+
+        // Utility for Mouse Scroll Wheel
+        var orthographicSize = camera.orthographicSize;
+        orthographicSize += Input.GetAxis("Mouse ScrollWheel") * orthoZoomSpeedWheel;
+        orthographicSize = Mathf.Clamp(orthographicSize, 3.0f, 8.0f);
+        camera.orthographicSize = orthographicSize;
     }
-
-    // Utility for Mouse Scroll Wheel
-    var orthographicSize = camera.orthographicSize;
-    orthographicSize += Input.GetAxis("Mouse ScrollWheel") * orthoZoomSpeedWheel;
-    orthographicSize = Mathf.Clamp(orthographicSize, 3.0f, 8.0f);
-    camera.orthographicSize = orthographicSize;
-  }
 }
