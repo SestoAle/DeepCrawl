@@ -6,15 +6,17 @@ using Unity.Entities;
 public class Item : GameObjectEntity
 {
 
-  public int id;
-  public int x;
-  public int y;
-  public float spawnProbability;
-  public string itemName;
-  public string damageString;
+    public int id;
+    public int x;
+    public int y;
+    public float spawnProbability;
+    public string itemName;
+    public string damageString;
 
-  public Item createCopy()
-  {
-    return (Item)this.MemberwiseClone();
-  }
+    public bool isGrounded = true;
+
+    public Item createCopy()
+    {
+        return (Item)this.MemberwiseClone();
+    }
 }

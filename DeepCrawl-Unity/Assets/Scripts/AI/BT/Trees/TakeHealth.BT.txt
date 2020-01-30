@@ -1,0 +1,5 @@
+tree("TakeHealth")
+    sequence
+        not GotPotion
+        FindPotion "Health"
+        Move

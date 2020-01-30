@@ -1,0 +1,12 @@
+tree("Root")
+	sequence
+		tree("Move")
+
+tree("Move")
+    parallel
+        repeat
+            moveAgent
+        repeat
+            sequence
+                not isInBorder
+                changeDirection

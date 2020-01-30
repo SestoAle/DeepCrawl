@@ -172,7 +172,7 @@ namespace MLAgents
         bool modeSwitched;
 
         /// Pointer to the batcher currently in use by the Academy.
-        MLAgents.Batcher brainBatcher;
+        public MLAgents.Batcher brainBatcher;
 
         /// Used to write error messages.
         StreamWriter logWriter;
@@ -618,7 +618,7 @@ namespace MLAgents
         /// <returns>
         /// List of brains currently attached to academy.
         /// </returns>
-        static List<Brain> GetBrains(GameObject academy)
+        public static List<Brain> GetBrains(GameObject academy)
         {
             List<Brain> brains = new List<Brain>();
             var transform = academy.transform;

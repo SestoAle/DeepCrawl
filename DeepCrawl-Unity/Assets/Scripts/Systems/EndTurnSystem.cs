@@ -12,6 +12,7 @@ public class EndTurnSystem : ComponentSystem
     public GameObjectArray GameObjects;
     public ComponentDataArray<EndTurn> EndTurns;
     public ComponentDataArray<Turn> Turns;
+    public ComponentDataArray<Position> Positions;
 
     public SubtractiveComponent<Damage> Damages;
     public SubtractiveComponent<DoneComponent> Done;
@@ -31,8 +32,17 @@ public class EndTurnSystem : ComponentSystem
         turn.hasEndedTurn = 1;
         data.Turns[i] = turn;
       }
+      
+      //TODO: Remove this?
+      if (data.GameObjects[i].CompareTag("Player"))
+      {
+        Tile tile = BoardManagerSystem.instance.getTileFromObject(data.GameObjects[i]);
+        BoardManagerSystem.instance.deHighlightAll(tile.getParent());
+      }
+      
       // Remove EndTurn component
       puc.RemoveComponent<EndTurn>(data.Entity[i]);
+      
     }
   }
 }

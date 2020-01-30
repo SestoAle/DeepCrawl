@@ -1,0 +1,6 @@
+tree("Heal")
+    sequence
+        GotHealthPotion
+        HpLessThan 5
+        UsePotion
+        

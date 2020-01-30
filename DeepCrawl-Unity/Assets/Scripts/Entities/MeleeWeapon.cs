@@ -3,6 +3,9 @@ using System.Collections;
 
 public class MeleeWeapon : Item
 {
-  public int minDamage = 1;
-  public int maxDamage = 1;
+    public int type = 0;
+    public int hp = 0;
+    public int atk = 0;
+    public int  def = 0;
+    public int des = 0;
 }

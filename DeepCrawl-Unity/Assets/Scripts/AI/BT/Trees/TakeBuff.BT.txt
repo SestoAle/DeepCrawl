@@ -1,0 +1,6 @@
+tree("TakeBuff")
+    sequence
+        not GotPotion
+        not ActiveBuff
+        FindPotion "Buff"
+        Move

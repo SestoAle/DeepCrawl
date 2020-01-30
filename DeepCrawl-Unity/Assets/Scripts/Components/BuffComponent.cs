@@ -5,9 +5,9 @@ using Unity.Entities;
 
 public struct Buff : IComponentData
 {
-  public int hp;
-  public int def;
-  public int atk;
-  public int duration;
-  public int turn;
+    public int hp;
+    public int def;
+    public int atk;
+    public int duration;
+    public int turn;
 }

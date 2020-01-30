@@ -1,21 +1,11 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1997843533092890}
-  m_IsPrefabAsset: 1
 --- !u!1 &1997843533092890
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4029400420706938}
@@ -29,9 +19,10 @@ GameObject:
   m_IsActive: 1
 --- !u!4 &4029400420706938
 Transform:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997843533092890}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -42,56 +33,95 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114151544521941222
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1997843533092890}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2cf00a20918441819476b1da5316fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 8
-  width: 8
-  tilePrefabs:
-  - {fileID: 114578096759464964, guid: da007424ba8f84304b82bd138111f2bf, type: 2}
-  wallTilePrefabs:
-  - {fileID: 114299690508111298, guid: e4bce43b1e4ba4a349e462284ac37687, type: 2}
-  - {fileID: 114706857487092842, guid: 5156382e697864cc8a63d30f997215dc, type: 2}
-  - {fileID: 114597787380065854, guid: 8875c81f132634d418bcdb77a2ecf36c, type: 2}
-  - {fileID: 114519084942458450, guid: e695a1f363f2d41f39208696e7ee6142, type: 2}
-  - {fileID: 114770531945825756, guid: 4e28ee08a83fe40c3a132000d3058f9a, type: 2}
-  outerWallPrefab: {fileID: 1863730907521882, guid: 481971872d3134ea081aca2e4ed70862,
-    type: 2}
-  cornerWallPrefab: {fileID: 1917546416506182, guid: 5019feabb9f5b48c1a801212f998ca8e,
-    type: 2}
-  doorPrefab: {fileID: 1879020637724226, guid: 8868042849cc64a069df09c080d19404, type: 2}
-  windowPrefab: {fileID: 1738402810862878, guid: 6745d4086eaf040f68d7ac82bfe8b89e,
-    type: 2}
-  minWallNum: 0.125
-  maxWallNum: 0.125
-  itemProbability: 0.05
-  TilesContainer: {fileID: 0}
+  numRooms: 1
+  currentRoomId: 99
+  obscureAll: 1
+  doorOpaqueMaterial: {fileID: 0}
+  doorFadeMaterial: {fileID: 0}
+  sceneName: 
+  level: 1
+  currentTurn: 0
+  maxNumberObject: 0.08
+  minNumberObject: 0.04
+  maxNumberLoot: 0.08
+  minNumberLoot: 0.04
+  chestProbability: 0.1
+  loots: []
+  chestPrefab: {fileID: 0}
+  tilePool: {fileID: 0}
+  tileDirtPool: {fileID: 0}
+  wallPool: {fileID: 0}
+  leftWallPool: {fileID: 0}
+  rightWallPool: {fileID: 0}
+  leftDoorPool: {fileID: 0}
+  rightDoorPool: {fileID: 0}
+  leftWindowPool: {fileID: 0}
+  rightWindowPool: {fileID: 0}
+  cornerWallPool: {fileID: 0}
+  roomHorWallPool: {fileID: 0}
+  roomVerWallPool: {fileID: 0}
+  cornerHorWallPool: {fileID: 0}
+  cornerVerWallPool: {fileID: 0}
+  altarPool: {fileID: 0}
+  chestPool: {fileID: 0}
+  lootPoolsContainer: {fileID: 0}
+  lootPools: []
+  itemPool: {fileID: 0}
+  enemyPool: {fileID: 0}
+  OuterContainer: {fileID: 0}
   PlayersContainer: {fileID: 0}
-  ItemsContainer: {fileID: 0}
   Level: {fileID: 0}
-  brain: {fileID: 0}
+  trainBrain: {fileID: 0}
+  doubleAgentBrain: {fileID: 0}
+  academy: {fileID: 0}
   isTraning: 1
+  player: 0
+  doubleSize: 5
+  tripleSize: 3
+  doubleAgent: 1
+  noAnim: 1
+  saveInformation: 0
+  maxEpisodeInSavingInformations: 200
+  behaviorTree: 0
+  MLvsBT: 0
+  isGuided: 0
+  ArcherBrain: {fileID: 0}
+  WarriorBrain: {fileID: 0}
+  RangerBrain: {fileID: 0}
+  ArcherPrefab: {fileID: 0}
+  WarriorPrefab: {fileID: 0}
+  RangerPrefab: {fileID: 0}
+  startSwords: []
+  startBows: []
+  startPotions: []
+  sword: {fileID: 0}
+  bow: {fileID: 0}
   playerPrefab: {fileID: 1696112137662448, guid: 74307fae72aa841b8bb54e39cf9c53ad,
-    type: 2}
+    type: 3}
+  trainingPrefab: {fileID: 0}
   enemyPrefab: {fileID: 1696112137662448, guid: 482b864a163234c14bea1d7ea0c137e4,
-    type: 2}
+    type: 3}
+  activePlayer: {fileID: 0}
+  playerStats:
+    maxHp: 0
+    hp: 0
+    def: 0
+    atk: 0
+    des: 0
+    actualRange: 0
   numPlayers: 0
+  numAgents: 0
   numEnemies: 2
+  deadEnemies: 0
+  turnCount: 0
   totalPlayers: 0
-  items:
-  - {fileID: 1405946810725914, guid: f7a6b70ab35434204ad5af9af54ddfa9, type: 2}
-  - {fileID: 1824517157201210, guid: aa25f38259f9c4987acdaa4aa90e5900, type: 2}
-  - {fileID: 1758288028709772, guid: 7f1ace11562824a019083cc1daa5a186, type: 2}
-  - {fileID: 1277967273015854, guid: bf19ab815563c4c1990e5b93f68e187b, type: 2}
-  - {fileID: 1540242259470926, guid: 70a687c5b7cfa4722a308206a28d2603, type: 2}
-  - {fileID: 1277967273015854, guid: 83f51f6b8286943dd8231f2aadfafd65, type: 2}
-  - {fileID: 1919069168613194, guid: ea6707690716f48deb6e6e81fa7975d2, type: 2}
-  - {fileID: 1656520115470442, guid: 0414278ca8b224a799d08790bb4c47c8, type: 2}
-  - {fileID: 1214594088006098, guid: 2da1c7ad3ce1b4dc9bfa6ff0c0e49599, type: 2}
-  - {fileID: 1117401058360676, guid: 36b9ca7771c1c46308c5fddb052a0754, type: 2}

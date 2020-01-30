@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangeWeapon : Item {
+public class RangeWeapon : Item
+{
 
     public int range;
-    public int minDamage = 1;
-    public int maxDamage = 1;
+    public int hp = 0;
+    public int atk = 0;
+    public int def = 0;
+    public int des = 0;
 }

@@ -1,0 +1,7 @@
+tree("Root")
+    sequence
+        mute tree "Heal"
+        random(6 2 2)
+            tree "Move"
+            tree "TakeHealth"
+            tree "TakeBuff"

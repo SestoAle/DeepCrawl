@@ -5,7 +5,7 @@ using Unity.Entities;
 
 public class HealthPotion : Potion
 {
-  // Return the component attach to it
+  // Return the component attached to it
   public override IComponentData getComponent()
   {
     return new Damage { damage = -hp };

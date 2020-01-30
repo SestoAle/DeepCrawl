@@ -8,6 +8,8 @@ TagManager:
   - Puppet
   - Random
   - GameOver
+  - TreeAgent
+  - DoubleBrainedAgent
   layers:
   - Default
   - TransparentFX

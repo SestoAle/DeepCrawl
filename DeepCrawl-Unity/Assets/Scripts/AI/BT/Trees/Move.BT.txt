@@ -1,0 +1,14 @@
+tree("Move")
+    fallback
+        sequence
+            EnemyIsNear
+            mute tree "Buff"
+            fallback
+                FindSecureSpot
+                FindTarget
+            Move
+        sequence
+            fallback
+                FindSecureSpot
+                FindTarget
+            Move

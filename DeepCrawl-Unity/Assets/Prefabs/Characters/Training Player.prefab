@@ -798,6 +798,8 @@ GameObject:
   - component: {fileID: 114851510806828766}
   - component: {fileID: 114706557031590664}
   - component: {fileID: 6196528252524809449}
+  - component: {fileID: 114492333039113778}
+  - component: {fileID: 114160867359905906}
   m_Layer: 0
   m_Name: Training Player
   m_TagString: Player
@@ -904,8 +906,8 @@ MonoBehaviour:
     maxHp: 10
     hp: 10
     def: 3
-    atk: 3
-    des: 3
+    atk: 5
+    des: 1
     actualRange: 0
 --- !u!114 &114851510806828766
 MonoBehaviour:
@@ -953,6 +955,70 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114492333039113778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696112137662448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e43e7170fb45b4b81dcd16d0ff55d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 4900000, guid: 492bb99d3d7c342f1bfd88bd7bc56d82, type: 3}
+  - {fileID: 4900000, guid: 38369b33a43ed4638837e7f2f95204b9, type: 3}
+  - {fileID: 4900000, guid: 082a16bdd0638474ea5bdda92669621a, type: 3}
+  - {fileID: 4900000, guid: 4df2a246723004f35baa93edfbbbe991, type: 3}
+  - {fileID: 4900000, guid: 3f59c28d98c044b0a8c64ad1a8ccac8a, type: 3}
+  - {fileID: 4900000, guid: c06430949729a41fdbf64cbd0a02613e, type: 3}
+  autoReset: 0
+  tickOn: 3
+  sourceInfos:
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+  - isFoldout: 1
+    breakPoints: 
+    breakPointStatuses: 
+    collapsedLines: 
+    btScript: 
+--- !u!114 &114160867359905906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696112137662448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09be59f79612f46ec85595e2bca0bae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1723923291568500
 GameObject:
   m_ObjectHideFlags: 0
