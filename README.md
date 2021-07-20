@@ -12,7 +12,7 @@ dungeons and defeat all the guardians of the rooms, paying attention to every
 moves the AI does!
 
 <p align="center">
-<img  src="https://media.giphy.com/media/hwnEQEeyn8Nm4j5tNH/giphy.gif" width="60%" height="60%"/>
+<img  src="https://media.giphy.com/media/1zlUEEeKTZTnaCXiww/giphy.gif" width="60%" height="60%"/>
 </p>
 
 The game was developed in Unity, while the AI was built through Tensorforce [[2]](#references) and
